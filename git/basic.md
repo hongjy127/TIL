@@ -131,7 +131,7 @@ $ git init
 
 `$ git restore FILE/DIRECTORY_NAME` : 복원 (잘 안씀)
 
-
+---
 
 #### github에 올리기
 

@@ -1,6 +1,6 @@
 # Today I Learned
 
-[TOC]
+
 
 ## Table of Contents
 
@@ -8,5 +8,7 @@
 
 ### vim
 
-### git
+### Git
+
+
 
