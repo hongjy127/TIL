@@ -117,19 +117,31 @@ $ git init
 
 #### add/commit
 
-`git add FILE/DIRECTORY_NAME` : 등록 or tracking
+`$ git add FILE/DIRECTORY_NAME` : 등록 or tracking
 
-`git add .`  : directory 전체 올리기
+`$ git add .`  : directory 전체 올리기
 
-`git commit -m 'COMMIT_MESSAGE'` : commit
+`$ git commit -m 'COMMIT_MESSAGE'` : commit
 
 ![image-20201230001553477](basic.assets/image-20201230001553477.png)
 
-`git rm --cached FILE/DIRECTORY_NAME`  : tracking 취소
+`$ git rm --cached FILE/DIRECTORY_NAME`  : tracking 취소
 
-`git restore --staged FILE/DIRECTORY_NAME`  : stage에서 내리기
+`$ git restore --staged FILE/DIRECTORY_NAME`  : stage에서 내리기
 
-`git restore FILE/DIRECTORY_NAME` : 복원 (잘 안씀)
+`$ git restore FILE/DIRECTORY_NAME` : 복원 (잘 안씀)
+
+
+
+#### github에 올리기
+
+new repository로 올리고 주소 복사
+
+`$ git remote add`
+
+`$ git remote add origin 주소` : 주소를 origin이라는 이름으로 등록 (한 번만 등록하면 됨.)
+
+`$ git push origin master` : origin(등록한 이름)을 push (백업됨.)
 
 
 
