@@ -32,7 +32,9 @@ CLI (Command Line Interface) <-> GUI (Graphic User Interface)
 
 #### cd
 `$ cd ~` : 홈폴더로
+
 `$ cd ..` : 상위폴더로
+
 `$ cd ../..` : 상위폴더의 상위폴더로
 
 #### mkdir
@@ -87,6 +89,7 @@ Version Control System
 #### 처음 설정
 
 `git config --global user.name "이름"`
+
 `git config --global user.email "이메일"`
 
 ---
@@ -107,6 +110,7 @@ $ git init
 ---
 
 `$ git status ` : 현재 상태 보기
+
 `$ git log` : commits 요약
 
 ---
@@ -114,13 +118,17 @@ $ git init
 #### add/commit
 
 `git add FILE/DIRECTORY_NAME` : 등록 or tracking
-`git add .`  : directory 전체 올리기
-`git commit -m COMMIT_MESSAGE` : commit
 
-![image-20201230000744856](basic.assets/image-20201230000744856.png)
+`git add .`  : directory 전체 올리기
+
+`git commit -m 'COMMIT_MESSAGE'` : commit
+
+![image-20201230001553477](basic.assets/image-20201230001553477.png)
 
 `git rm --cached FILE/DIRECTORY_NAME`  : tracking 취소
+
 `git restore --staged FILE/DIRECTORY_NAME`  : stage에서 내리기
+
 `git restore FILE/DIRECTORY_NAME` : 복원 (잘 안씀)
 
 
