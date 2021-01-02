@@ -2,97 +2,86 @@
 
 > Contents
 >
-> - CLI
-> - vim
-> - git 명령어
+> git 명령어
+> git 실습
+
+
+
+
+## Git이란?
+
+Version Control System
+
+
+
+
+## Git 명령어
 
 - git 설치 (https://git-scm.com/)
+
 - git book (https://git-scm.com/book/ko/v2)
 
 
 
+### Settings
 
-
-## CLI
-
-### CLI란?
-
-CLI (Command Line Interface) <-> GUI (Graphic User Interface)
-
-터미널로 컴퓨터랑 상호작용하는 것
-
-![image-20201229230635959](basic.assets/image-20201229230635959.png)
-
-###### 참고)
-/ : 최상위 폴더
-~ : 홈폴더
-
-
-### CLI 기본 명령어
-
-#### cd
-`$ cd ~` : 홈폴더로
-
-`$ cd ..` : 상위폴더로
-
-`$ cd ../..` : 상위폴더의 상위폴더로
-
-#### mkdir
-`$ mkdir DIRECTORY_NAME` : 새로운 directory (폴더) 만들기
-
-#### touch FILE_NAME
-`$ touch FILE_NAME` : 새로운 파일 만들기
-
-###### example
-`$ touch test.txt`
-`$ touch index.html`
-
-#### ls
-`$ ls` : list, directory파일 목록 확인
-`$ ls -a` : 숨겨진 파일까지 확인
-
-#### rm
-
-#### rm -r
-
-#### mv
-
-
-
-
-
-## vim
-
-CLI 문서 편집기
-
-| 명령어 | 설명 |  |
-| :--------------: | :--------------: | :--------------: |
-| i | 편집(insert)모드 |  |
-| esc | 명령모드 |  |
-|   :w   |       저장       | 명령모드에서 |
-|   :q   |       종료       | 명령모드에서 |
-|  :wq   |   저장 후 종료   | 명령모드에서 |
-|  :q!   |    강제 종료     | 명령모드에서 |
-
-
-
-
-
-## Git
-
-### Git이란?
-
-Version Control System
-
-### git 명령어
-
-#### 처음 설정
+- 컴퓨터마다 한 번씩만 설정하는 것
 
 `git config --global user.name "이름"`
 
 `git config --global user.email "이메일"`
 
 ---
+
+- Project 생성 시 설정하는 것
+
+1. `$ mkdir <dir name>`
+
+   `$ cd <dir name>`
+
+2. `$ touch .gitignore`
+
+3. `$ touch README.md`
+
+4. `$ git init`
+
+---
+
+- Github에 백업
+
+1. `$ git init` 이 되어있는 상태 (로컬 저장소)
+
+2. `$ git add .`
+
+3. `$ git commit -m 'COMMIT MESSAGE'`
+
+4. Github에 remote 저장소 만들기 (new repository)
+
+5. `$ git remote add origin <URL>`
+
+6. `$ git push origin master`
+
+---
+
+- 다운로드
+	- `$ git pull origin master`
+	- `$ git clone <URL>`
+
+---
+
+- Github로 협업하기 (branch)
+
+
+
+
+
+
+
+
+
+
+## Git 실습
+
 
 ```
 $ cd learn_git
@@ -115,7 +104,7 @@ $ git init
 
 ---
 
-#### add/commit
+### add/commit
 
 `$ git add FILE/DIRECTORY_NAME` : 등록 or tracking
 
@@ -133,7 +122,7 @@ $ git init
 
 ---
 
-#### github에 올리기
+### github에 올리기
 
 new repository로 올리고 주소 복사
 
