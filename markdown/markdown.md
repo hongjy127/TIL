@@ -10,6 +10,6 @@ Ctrl + /
 
 - link
 
-  [Inner link](# Inner-link): # 뒤는 소문자로 쓰기/띄어쓰기는 -로 구분
-  [URL](<URL)
+  `[Inner link](#Inner-link)`: # 뒤는 소문자로 쓰기/띄어쓰기는 -로 구분
+  `[URL](<URL>)`
 

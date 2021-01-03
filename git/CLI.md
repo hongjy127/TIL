@@ -4,8 +4,8 @@
 
 > ## Contents
 >
-> - [CLI](# cli)
-> - [vim](# vim)
+> - [CLI](#cli)
+> - [vim](#vim)
 
 
 

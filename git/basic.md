@@ -4,9 +4,9 @@
 
 > ## Contents
 >
-> - [Settings](# settings)
-> - [Git 기본 명령어](# git-기본-명령어)
-> - [Git 공부](# Git-공부)
+> - [Settings](#settings)
+> - [Git 기본 명령어](#git-기본-명령어)
+> - [Git 공부](#Git-공부)
 
 
 
