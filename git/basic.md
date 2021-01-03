@@ -1,9 +1,14 @@
 # Git
 
-> Contents
+
+
+> ## Contents
 >
-> git 명령어
-> git 실습
+> - [Settings](# settings)
+> - [Git 기본 명령어](# git-기본-명령어)
+> - [Git 공부](# Git-공부)
+
+
 
 
 
@@ -12,14 +17,9 @@
 
 Version Control System
 
+- [[git 설치]](https://git-scm.com/)
 
-
-
-## Git 명령어
-
-- git 설치 (https://git-scm.com/)
-
-- git book (https://git-scm.com/book/ko/v2)
+- [[git book]](https://git-scm.com/book/ko/v2)
 
 
 
@@ -37,28 +37,31 @@ Version Control System
 
 1. `$ mkdir <dir name>`
 
-   `$ cd <dir name>`
+2. `$ cd <dir name>` 
 
-2. `$ touch .gitignore`
+  `$ touch .gitignore` [[gitignore]](https://www.toptal.com/developers/gitignore)
 
-3. `$ touch README.md`
+  `$ touch README.md` # 해당 프로젝트의 설명서 / 최상위 폴더에 만들기
 
-4. `$ git init`
+  `$ git init`
+
+---
+
+
+
+### Git 기본 명령어
+
+`$ git 명령어 -h` : help
 
 ---
 
 - Github에 백업
 
-1. `$ git init` 이 되어있는 상태 (로컬 저장소)
-
-2. `$ git add .`
-
+1. `$ git init`  상태에서 (로컬 저장소)
+2. `$ git add <dir/file_name>`
 3. `$ git commit -m 'COMMIT MESSAGE'`
-
 4. Github에 remote 저장소 만들기 (new repository)
-
-5. `$ git remote add origin <URL>`
-
+5. `$ git remote add origin <URL>` 
 6. `$ git push origin master`
 
 ---
@@ -71,21 +74,26 @@ Version Control System
 
 - Github로 협업하기 (branch)
 
+  - `$ git branch`
+  - `$ git branch <branch_name>`
+  - `$ git merge <branch>`
+
+---
+
+- Git 상태 확인
+	- `$ git log`
+	- `$ git status`
 
 
 
 
 
 
-
-
-
-## Git 실습
+## Git 공부
 
 
 ```
 $ cd learn_git
-
 $ git init
 ```
 
@@ -102,11 +110,15 @@ $ git init
 
 `$ git log` : commits 요약
 
+`$ git log --pretty==oneline -abbrev -commit` : commit 짧게 나옴.
+
+` $ git log --pretty=format:"%d%s" --graphs` : commit 그래프 보기
+
 ---
 
 ### add/commit
 
-`$ git add FILE/DIRECTORY_NAME` : 등록 or tracking
+`$ git add <dir/file_name>` : 등록 or tracking
 
 `$ git add .`  : directory 전체 올리기
 
@@ -114,29 +126,66 @@ $ git init
 
 ![image-20201230001553477](basic.assets/image-20201230001553477.png)
 
-`$ git rm --cached FILE/DIRECTORY_NAME`  : tracking 취소
+`$ git rm --cached <dir/file_name>`  : tracking 취소
 
-`$ git restore --staged FILE/DIRECTORY_NAME`  : stage에서 내리기
+`$ git restore --staged <dir/file_name>`  : stage에서 내리기
 
-`$ git restore FILE/DIRECTORY_NAME` : 복원 (잘 안씀)
+`$ git restore <dir/file_name>` : 복원 (잘 안씀)
 
 ---
 
 ### github에 올리기
 
-new repository로 올리고 주소 복사
+`$ git remote add <remote_name> <URL>` : URL을 remote_name(주로 origin)으로 등록 (한 번만 등록)
 
-`$ git remote add`
+`$ git push <remote_name> <branch>` : remote_name을 push (git hub에 백업됨.)
 
-`$ git remote add origin 주소` : 주소를 origin이라는 이름으로 등록 (한 번만 등록하면 됨.)
+---
 
-`$ git push origin master` : origin(등록한 이름)을 push (백업됨.)
+### Branch 만들기
+
+* 코드가 어떤 영향을 줄 지 모를 때 branch 사용해서 해보기
+
+* 협업할 때 branch로 작업 후 github에서 merge
+* git flow, github flow
+
+---
+
+`$ git branch` : branch 목록 보기
+
+`$ git branch <branch_name>` : branch 만들기
+
+`$ git branch -d <branch_name>` : branch 삭제
+
+`$ git branch -D <branch_name>` : branch 강제 삭제
+
+
+
+`$ git switch <branch>`
+
+`$ git switch -c <branch>` == `$ git checkout -b <branch>` : branch를 만들고 이동까지 같이 하는 것
+
+$ `git chechout <branch/commit_id>` : branch/commit_id 으로 HEAD가 움직임 / commit하지 말고 과거 코드를 보고오는 용으로 사용
+
+참고) git log 시 나오는 주소(commit_id)는 앞에 6개만 써도 자동완성
+
+
+
+`$ git merge <branch>` : master branch로 가서 합쳐야 함. / 합쳐지면 알아서 commit이 생김
+
+----
 
 
 
 
 
+fast forward (no merge commit)
 
+auto merge commit
+
+conflict => manual merge commit
+
+HEAD
 
 
 

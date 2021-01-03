@@ -1,16 +1,17 @@
-# Git
+# CLI/vim
 
-> Contents
+
+
+> ## Contents
 >
-> - CLI(#cli)
-> - vim(#vim)
+> - [CLI](# cli)
+> - [vim](# vim)
+
 
 
 
 
 ## CLI
-
-### CLI란?
 
 CLI (Command Line Interface) <-> GUI (Graphic User Interface)
 
@@ -23,7 +24,10 @@ CLI (Command Line Interface) <-> GUI (Graphic User Interface)
 ~ : 홈폴더
 
 
+
 ### CLI 기본 명령어
+
+---
 
 #### cd
 `$ cd ~` : 홈폴더로
@@ -32,19 +36,27 @@ CLI (Command Line Interface) <-> GUI (Graphic User Interface)
 
 `$ cd ../..` : 상위폴더의 상위폴더로
 
+---
+
 #### mkdir
 `$ mkdir <dir_name>` : 새로운 directory (폴더) 만들기
 
-#### touch FILE_NAME
+---
+
+#### touch
 `$ touch <file_name>` : 새로운 파일 만들기
 
 ###### example
 `$ touch test.txt`
 `$ touch index.html`
 
+---
+
 #### ls
 `$ ls` : list, directory파일 목록 확인
 `$ ls -a` : 숨겨진 파일까지 확인
+
+---
 
 #### rm
 
@@ -52,7 +64,11 @@ CLI (Command Line Interface) <-> GUI (Graphic User Interface)
 
 #### mv
 
+---
 
+### start
+
+`$ start <file_name>` : 파일 열기 # Ctrl + click
 
 
 
