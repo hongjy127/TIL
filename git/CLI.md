@@ -2,8 +2,8 @@
 
 > Contents
 >
-> - CLI
-> - vim
+> - CLI(#cli)
+> - vim(#vim)
 
 
 
@@ -33,10 +33,10 @@ CLI (Command Line Interface) <-> GUI (Graphic User Interface)
 `$ cd ../..` : 상위폴더의 상위폴더로
 
 #### mkdir
-`$ mkdir DIRECTORY_NAME` : 새로운 directory (폴더) 만들기
+`$ mkdir <dir_name>` : 새로운 directory (폴더) 만들기
 
 #### touch FILE_NAME
-`$ touch FILE_NAME` : 새로운 파일 만들기
+`$ touch <file_name>` : 새로운 파일 만들기
 
 ###### example
 `$ touch test.txt`
