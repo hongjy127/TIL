@@ -17,7 +17,7 @@ CLI (Command Line Interface) <-> GUI (Graphic User Interface)
 
 터미널로 컴퓨터랑 상호작용하는 것
 
-![image-20201229230635959](basic.assets/image-20201229230635959.png)
+![image-20201229230635959](git.assets/image-20201229230635959.png)
 
 ###### 참고)
 / : 최상위 폴더
@@ -48,12 +48,14 @@ CLI (Command Line Interface) <-> GUI (Graphic User Interface)
 
 ###### example
 `$ touch test.txt`
+
 `$ touch index.html`
 
 ---
 
 #### ls
 `$ ls` : list, directory파일 목록 확인
+
 `$ ls -a` : 숨겨진 파일까지 확인
 
 ---
