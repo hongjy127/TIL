@@ -48,11 +48,22 @@
 
 
 ```python
-help()
-
+help() # 도움말
+```
+- 출력
+```python
 print(출력 내용)
 print(출력 내용, sep=구분자, end=끝문자) # 출력
 ```
+
+- 입력
+  - input 함수는 문자열 타입으로 리턴
+
+```python
+variable = input('질문내용')
+```
+
+
 
 ---
 
