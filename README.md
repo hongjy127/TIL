@@ -7,7 +7,7 @@
 ### Git
 
 * [CIL/vim](https://github.com/hongjy127/TIL/blob/master/git/CLI.md)
-* [Git](https://github.com/hongjy127/TIL/blob/master/git/basic.md)
+* [Git](https://github.com/hongjy127/TIL/blob/master/git/git.md)
 
 ### Markdown
 
@@ -16,3 +16,4 @@
 
 ### Python
 
+- [기본문법](https://github.com/hongjy127/TIL/blob/master/python/python.md)

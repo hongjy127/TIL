@@ -67,6 +67,7 @@ Version Control System
 ---
 
 - 다운로드
+	- `$ git remote add origin <URL>` 로 설정 해준 뒤,
 	- `$ git pull origin master`
 	- `$ git clone <URL>`
 
@@ -124,7 +125,7 @@ $ git init
 
 `$ git commit -m 'COMMIT_MESSAGE'` : commit
 
-![image-20201230001553477](basic.assets/image-20201230001553477.png)
+![image-20201230001553477](git.assets/image-20201230001553477.png)
 
 `$ git rm --cached <dir/file_name>`  : tracking 취소
 
