@@ -4,18 +4,20 @@
 
 > ## Contents
 >
-> 1. [개발환경 구축](#01.-개발환경-구축)
+> 1. [개발환경 구축]
 >
-> 2. [기본 문법](#02.-기본-문법)
-> 	- [기본 구조](#기본-구조-(실습-파일))
-> 	- [변수](#변수)
-> 	- [타입](#타입)
->	- [연산자](#연산자)
->	- [조건문](#조건문)
-> 	- [반복문](#반복문)
-> 	- [함수](#함수)
->	- [문자열 관리](#문자열-관리)
->	- [리스트와 튜플](#리스트와-튜플)
+> 2. [기본 문법]
+> 	- 기본 구조
+> 	- 변수
+> 	- 타입
+> 	- 연산자
+> 	- 조건문
+> 	- 반복문
+> 	- 함수
+> 	- 문자열 관리
+> 	- 리스트와 튜플
+> 	- 사전과 집합
+> 	- 컬렉션 관리
 
 
 
@@ -341,12 +343,17 @@ for 제어변수1 in 컬렉션1:
 - 함수정의
 
 ```python
-def 함수명(인수 목록):
-    """"도움말 제공(가장 첫 줄, 삼중따옴표로 지정)""""
-    명령 블록
+def funcname(parameter_list):
+    """
+    docstring
+    """
+    pass
     return 리턴값
     
 함수명(인수 목록)  # 함수 호출
+
+# lambda 함수
+lambda parameter_list: expression
 ```
 
 - 기본값 지정
@@ -371,6 +378,7 @@ def 함수명(*인수명):
 - 키워드 가변 인수
   - **로 지정한 타입은 dictionary
   - 일반 인수, 가변 인수, 키워드 가변 인수 순서로 배치
+  - 키워드 가변 인수는 여러개 사용 가능
 
 ```python
 def 함수명(**인수명):
@@ -505,6 +513,7 @@ def 함수명(**인수명):
 #### 리스트
 
 - [ , , ]
+- list() : 리스트로 만들기
 - sequence
 - 안에 들어가는 데이터 타입은 섞여도 상관 없음
 - 문자열과 동일한 문법(index, slicing, +, *)
@@ -519,7 +528,7 @@ def 함수명(**인수명):
 
 ##### 확장
 
-- .extenstion() : 원본에 확장
+- .extend() : 원본에 확장
 - +는 새로운 값에 대입 가능
 
 ##### 삭제
@@ -545,7 +554,16 @@ def 함수명(**인수명):
 
 .
 
+#### 튜플
 
+- ( , , ) (괄호 생략 가능)
+- tuple() : 튜플로 만들어줌
+
+- 리스트보다 속도가 빠름
+- indexing, slicing 가능
+- indexing으로 수정, 삭제 불가능 (읽기전용)
+
+- unpacking, swap, return 튜플 (함수는 값을 하나만 리턴 가능, 튜플 하나를 리턴하는건 가능)
 
 
 
@@ -554,6 +572,122 @@ def 함수명(**인수명):
 
 
 ### 사전과 집합 [(실습파일)](https://github.com/hongjy127/TIL/blob/master/python/lec10.ipynb)
+
+#### dictionary
+
+```python
+dic = {
+    key1:value1,
+    key2:value2
+    key3:value3
+}
+
+# key:value(요소)를 entry라고 부름
+# entry의 순서는 의미가 없음
+
+dic[key1]  # value1
+dic.get(key1 [, 기본값])  # value1 (예외 발생 x)
+dic.keys()  # key 목록
+dic.values()  # value 목록
+dic.items()  # (key, value) 튜플 목록
+
+dic.update(dic2)  # 사전 합치기(주로 web에서 쓰임), 키가 중복되면 dic2가 살아남음
+```
+
+- key는 중복을 허용하지 않음(집합개념)
+- value는 중복 가능
+
+- 이중list(tuple)는 dict로 바꿀 수 있음
+
+```python
+li = [
+    [key1, value1],
+    [key2, value2],
+    [key3, value3]
+]
+
+dic = dict(li)  # list -> dict
+```
+
+
+
+- list vs. dict
+
+  - 검색의 성능이 필요하면 dict
+
+    list에서 요소를 찾으려면 (for ... if ...) 루프를 돌아야함 -> O(n) (find, index 메소드도 이만큼)
+
+    숫자가 정렬이 되어있다면 -> O(logn)
+
+    검색이 필요 없음(한번에 알아냄) -> O(1) : dict
+
+
+
+#### 집합
+
+- {value1, value2, ...}
+- `set(sequence)`
+- 중복을 허락하지 않음
+
+
+
+- .add(value)
+- .remove(value)
+
+
+
+##### 집합 연산
+
+| 연산          | 기호 | 메소드               |
+| ------------- | ---- | -------------------- |
+| 합집합        | \|   | union                |
+| 교집합        | &    | intersection         |
+| 차집합        | -    | difference           |
+| 배타적 차집합 | ^    | symmetric_difference |
+
+
+
+
+
+---
+
+
+
+### 컬렉션 관리 [(실습파일)](https://github.com/hongjy127/TIL/blob/master/python/lec11.ipynb)
+
+- eunmerate
+
+```python
+# index를 같이 출력할 때 자주 사용
+for num, i in enumerate(seq):
+    print(num, i)
+```
+
+- zip
+
+```python
+# 위치기반으로 묶어 튜플로 반환
+# 개수가 다르면 짧은 시퀀스에 맞춤
+# zip 객체로 return, for문에 사용할 수 있음
+
+for num, i in zip(seq1, seq2):
+    print(num, i)
+```
+
+```python
+# list(zip(seq1, seq2))로 바꿔 사용가능하나 한번만 loof 사용 가능
+# 계속 사용하려면 보통 list로 바로 바꿔서 사용함
+
+zip_list = list(zip(seq1, seq2))  # list로 변환
+zip_dict = dict(zip(seq1, seq2))  # dictionary로 변환
+```
+
+- any(seq)
+- all(seq)
+
+- filter(판정함수, seq) : seq로 리턴
+
+
 
 
 
