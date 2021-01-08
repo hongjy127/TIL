@@ -19,15 +19,9 @@ CLI (Command Line Interface) <-> GUI (Graphic User Interface)
 
 ![image-20201229230635959](git.assets/image-20201229230635959.png)
 
-###### 참고)
-/ : 최상위 폴더
-~ : 홈폴더
-
 
 
 ### CLI 기본 명령어
-
----
 
 #### cd
 `$ cd ~` : 홈폴더로
@@ -35,6 +29,17 @@ CLI (Command Line Interface) <-> GUI (Graphic User Interface)
 `$ cd ..` : 상위폴더로
 
 `$ cd ../..` : 상위폴더의 상위폴더로
+
+###### 참고)
+
+- \이 붙으면 절대경로, 안붙으면 상대경로 (working directory 기준)
+
+/ : 최상위 폴더
+~ : 홈폴더
+
+. : 자기자신
+
+.. : 상위 디렉토리
 
 ---
 
@@ -53,10 +58,15 @@ CLI (Command Line Interface) <-> GUI (Graphic User Interface)
 
 ---
 
-#### ls
+#### ls (git에서)
+
 `$ ls` : list, directory파일 목록 확인
 
 `$ ls -a` : 숨겨진 파일까지 확인
+
+#### dir
+
+`>dir` : directory 모든 목록 확인
 
 ---
 
@@ -68,9 +78,13 @@ CLI (Command Line Interface) <-> GUI (Graphic User Interface)
 
 ---
 
-### start
+#### start
 
 `$ start <file_name>` : 파일 열기 # Ctrl + click
+
+
+
+---
 
 
 

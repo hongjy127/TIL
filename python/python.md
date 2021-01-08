@@ -718,7 +718,7 @@ zip_dict = dict(zip(seq1, seq2))  # dictionary로 변환
 
 
 
-### 표준 모듈
+### 표준 모듈 [(실습파일)](https://github.com/hongjy127/TIL/blob/master/python/lec12.ipynb)
 
 - 파이썬에서 제공
 - 내가 직접 만드는거
@@ -770,7 +770,7 @@ sys.exit(0)  # 숫자는 보통 개발자가 정하지만 관례로 0: 정상적
 
 
 
-### 예외
+### 예외 [(실습파일)](https://github.com/hongjy127/TIL/blob/master/python/lec13.ipynb)
 
 
 
@@ -801,7 +801,65 @@ raise 예외
 
 
 
-### 파일
+### 파일 [(실습파일)](https://github.com/hongjy127/TIL/blob/master/python/lec14.ipynb)
+
+- open(path, mode) : 파일 열기 / close() : 파일 닫기
+  - 항상 `with open() as f`: 형식으로 작성하기
+
+| 모드 |                                            |
+| ---- | ------------------------------------------ |
+| r    | 읽기, 파일이 없는 경우 예외 발생           |
+| w    | 쓰기, 파일이 없으면 새로 생김              |
+| a    | 추가                                       |
+| x    | 쓰기용으로 여나 기존 파일이 있는 경우 실패 |
+| t    | text 모드로 열기                           |
+| b    | binary 모드로 열기(숫자)                   |
+
+- .write() : 줄바꿈 없음
+- 파일읽기
+  - .read([n개의 내용])
+  - .readline() : 한 줄 읽기 (각 라인 끝에 \n이 들어있음)
+  - .readlines() : 전체 라인 읽기 (각 라인 끝에 \n이 들어있음)
+  - EOF (end of file)
+
+- seek(위치, 기준) : 입출력 위치
+  - 0: 파일의 처음 위치
+  - 1: 현재 위치
+  - 2: 파일의 끝 위치
+
+#### pickle 모듈
+
+- 파이썬의 자료형(python에서만 사용 가능)
+- 저장하기
+  - `pickle.dump(data, file)`
+  - file : "bw"로 오픈한 파일 객체
+- 로드하기
+  - `pickle.load(file)`
+  - file: "br"로 오픈한 파일 객체
+
+
+
+---
+
+
+
+### 주의할 점들
+
+- 되도록 함수로 만들어서 사용
+- 함수는 단일책임의 원칙
+- 변수 만들 때 관례
+  - 변수명: 명사
+  - 함수명: 동사_목적어
+
+- hard coding  피하기 (전역변수는 최대한 피하기)
+  - input
+  - sys.argv
+  - config.ini
+
+- \ufeff - ms의 utf-8에 이게 항상 붙음
+
+
+
 
 
 
