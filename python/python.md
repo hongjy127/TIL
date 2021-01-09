@@ -2,25 +2,7 @@
 
 # Python
 
-
-
-> ## Contents
->
-> 1. [개발환경 구축]
->
-> 2. [기본 문법]
-> 	- 기본 구조
-> 	- 변수
-> 	- 타입
-> 	- 연산자
-> 	- 조건문
-> 	- 반복문
-> 	- 함수
-> 	- 문자열 관리
-> 	- 리스트와 튜플
-> 	- 사전과 집합
-> 	- 컬렉션 관리
-> 	- 표준 모듈
+[TOC]
 
 
 
@@ -64,7 +46,8 @@ print(출력 내용, sep=구분자, end=끝문자)  # 출력
 ```
 
 - 입력
-  - input 함수는 문자열 타입으로 리턴
+
+  input 함수는 문자열 타입으로 리턴
 
 ```python
 variable = input('질문내용')
@@ -133,19 +116,21 @@ CamelCase : subjectTotalSum (Java, JavaScript)
 
 | 확장열 | 설명        |
 | ------ | ----------- |
-| \n     | 개행        |
-| \t     | 탭          |
-| \\"    | 큰 따옴표   |
-| \\'    | 작은 따옴표 |
-| \\\    | \문자       |
+| `\n`   | 개행        |
+| `\t`   | 탭          |
+| `\"`   | 큰 따옴표   |
+| `\'`   | 작은 따옴표 |
+| `\\`   | \문자       |
 
 - 문자 코드
+
+  문자열을 정렬할 때 사용
 
 ```python
 ord(문자열)  # 문자열 -> 숫자
 chr(숫자)  # 숫자 -> 문자열
 
-# 순서(문자열을 정렬할 때 사용)
+# 순서
 # ABC ... Z
 # 특수문자
 # abc ... z
@@ -205,25 +190,25 @@ chr(숫자)  # 숫자 -> 문자열
 
 #### 산술연산자
 
-- +, -, *, /
-- ** : 거듭제곱
-- // : 정수 나누기
-- % : 나머지
+- `+`, `-`, `*`, `/`
+- `**` : 거듭제곱
+- `//` : 정수 나누기
+- `%` : 나머지
 
 #### 복합 대입 연산자
 
-- +=, -+, *=
+- `+=`, `-+`, `*=`
 
 #### 비교 연산자
 
 | 연산자 | 설명                        |
 | ------ | --------------------------- |
-| ==     | 같다                        |
-| !=     | 다르다                      |
-| <      | 좌변이 우변보다 작다        |
-| >      | 좌변이 우변보다 크다        |
-| <=     | 좌변이 우변보다 작거나 같다 |
-| >=     | 좌변이 우변보다 크거나 같다 |
+| `==`   | 같다                        |
+| `!=`   | 다르다                      |
+| `<`    | 좌변이 우변보다 작다        |
+| `>`    | 좌변이 우변보다 크다        |
+| `<=`   | 좌변이 우변보다 작거나 같다 |
+| `>=`   | 좌변이 우변보다 크거나 같다 |
 
 #### 논리 연산자
 
@@ -260,7 +245,7 @@ chr(숫자)  # 숫자 -> 문자열
 
 #### if 문
 
-- 조건은 비교, 논리 연산자를 사용
+- 비교, 논리 연산자를 사용해 조건을 표현
 
 ```python
 if 조건: 명령  # 단일 라인인 경우만 가능
@@ -309,7 +294,7 @@ while 조건:
 #### for문
 
 - 컬렉션의 요소를 하나씩 꺼내 명령 블록을 실행
-- `range(시작, 끝, 증가값)` 을 많이 사용함
+- `range(begin, end, step)` 을 많이 사용함
 
 ```python
 for 제어변수 in 컬렉션:
@@ -357,7 +342,10 @@ def funcname(parameter_list):
 ```
 
 - 람다함수
-  - 함수 이름이 없음, 재사용하지 않음(functional programming)
+
+  함수 이름이 없음, 재사용하지 않음(functional programming)
+
+  한줄일 때만 사용 가능
 
 ```python
 # lambda 함수
@@ -373,9 +361,12 @@ def funcname(인수명 = 기본값):
 ```
 
 - 가변 인수
-  - 인수의 수가 고정되지 않고, 호출 시 원하는 만큼 지정할 수 있음
-  - 함수에서는 튜플로 변수를 받음
-  - 하나만 사용, 일반 인수 뒤에만 사용
+
+  인수의 수가 고정되지 않고, 호출 시 원하는 만큼 지정할 수 있음
+
+  함수에서는 튜플로 변수를 받음
+
+  하나만 사용, 일반 인수 뒤에만 사용
 
 ```python
 def funcname(*인수명):
@@ -422,12 +413,12 @@ def funcname(**인수명):
 
 #### index
 
-- 문자열[정수] : 0부터 인덱싱
-- 문자열[-정수] : 끝에서부터 인덱싱
+- `str[정수]` : 0부터 인덱싱
+- `str[-정수]` : 끝에서부터 인덱싱
 
 #### slicing
 
-- 문자열[begin : end : step]
+- `str[begin : end : step]`
 
 #### 검색
 
@@ -449,39 +440,39 @@ def funcname(**인수명):
 
 모두 boolean으로 return
 
-- isalpha
-- islower
-- isupper
-- isspace
-- isalnum
-- isdecimal
-- isdigit
-- isnumeric
-- isidentifier
-- isprintable
+- `isalpha`
+- `islower`
+- `isupper`
+- `isspace`
+- `isalnum`
+- `isdecimal`
+- `isdigit`
+- `isnumeric`
+- `isidentifier`
+- `isprintable`
 
 #### 변경
 
 문자열은 불변객체로 다른 값으로 바꾸지 못함 -> 원본을 읽어 새로운 문자열을 만들어줌
 
-- .lower()
-- .upper()
-- .swapcase() : 대문자 <-> 소문자
-- .capitalize() : 첫글자 대문자, 나머지 소문자로
-- .title() : 모든 단어의 첫글자 대문자, 나머지 소문자로
-- .strip() : 좌, 우 공백 제거
-- .lstrip() : 왼쪽 공백 제거
-- .rstrip() : 오른쪽 공백 제거
+- `.lower()`
+- `.upper()`
+- `.swapcase()`: 대문자 <-> 소문자
+- `.capitalize()`: 첫글자 대문자, 나머지 소문자로
+- `.title()` : 모든 단어의 첫글자 대문자, 나머지 소문자로
+- `.strip()` : 좌, 우 공백 제거
+- `.lstrip()` : 왼쪽 공백 제거
+- `.rstrip()` : 오른쪽 공백 제거
 
 #### 분할
 
-- .split(구분자) : 구분자 기준으로 분리하여 리스트로 리턴, 구분자 기본값은 공백
-- .splitlines()
-- 결합문자열.join(문자열)
+- `.split(구분자)` : 구분자 기준으로 분리하여 리스트로 리턴, 구분자 기본값은 공백
+- `.splitlines()`
+- `결합문자열.join(문자열)`
 
 #### 대체
 
-- .replace(기존문자열, 대체문자열)
+- `.replace(기존문자열, 대체문자열)`
 
 #### 포맷팅
 
@@ -522,52 +513,50 @@ def funcname(**인수명):
 #### 리스트
 
 - [ , , ]
-- list() : 리스트로 만들기
 - sequence
 - 안에 들어가는 데이터 타입은 섞여도 상관 없음
-- 문자열과 동일한 문법(index, slicing, +, *)
-- comprehension
+- 문자열과 동일한 문법(index, slicing, `+`, `*`)
+
+##### comprehension
 
 `[수식 for 변수 in 리스트 if 조건]` : 리스트 범위를 순회하며 변수를 추출하여 수식을 생성
 
 ##### 삽입
 
-- .append(값) : 리스트의 끝에 값을 추가 (자주사용)
-- .insert(위치, 값) : 지정한 위치에 값을 삽입
+- `.append(값)` : 리스트의 끝에 값을 추가 (자주사용)
+- `.insert(위치, 값)` : 지정한 위치에 값을 삽입
 
 ##### 확장
 
-- .extend() : 원본에 확장
-- +는 새로운 값에 대입 가능
+- `.extend()` : 원본에 확장
+- `+`는 새로운 값에 대입 가능
 
 ##### 삭제
 
-- .remove(값) : 값을 찾아 첫번째 요소 제거
-- del(리스트(index)) : 지정한 인덱스 제거
-- 리스트[시작:끝] = [] : 지정한 범위 제거
-- .pop() : 리스트 끝 요소를 삭제하고, 삭제한 요소를 리턴
-- .pop(인덱스)
+- `.remove(값)` : 값을 찾아 첫번째 요소 제거
+- `del(리스트(index))` : 지정한 인덱스 제거
+- `리스트[begin:end]` = [] : 지정한 범위 제거
+- `.pop()` : 리스트 끝 요소를 삭제하고, 삭제한 요소를 리턴
+- `.pop(index)`
 
 ##### 검색
 
-- .index(값) : list에서 값을 찾아 index를 반환, 없으면 예외 발생
-- .count(값) : 값이 리스트에 몇 번 나오는지 계산
-- 값 in 시퀀스
-- 값 not in 시퀀스
+- `.index(값)` : list에서 값을 찾아 index를 반환, 없으면 예외 발생
+- `.count(값)` : 값이 리스트에 몇 번 나오는지 계산
+- `값 in seq`
+- `값 not in seq`
 
 ##### 정렬
 
-- sort(\[reverse=True][key=키에 적용할 함수]) : 리스트를 정렬(디폴트 오름차순), 메서드
-- .reverse() : 리스트의 순서를 역으로, 메서드
-- sorted(시퀀스) : 정렬함수
+- `sort([reverse=True][key=키에 적용할 함수])` : 리스트를 정렬(디폴트 오름차순), 메서드
+- `.reverse()` : 리스트의 순서를 역으로, 메서드
+- `sorted(seq)` : 정렬함수
 
 .
 
 #### 튜플
 
 - ( , , ) (괄호 생략 가능)
-- tuple() : 튜플로 만들어줌
-
 - 리스트보다 속도가 빠름
 - indexing, slicing 가능
 - indexing으로 수정, 삭제 불가능 (읽기전용)
@@ -623,13 +612,13 @@ dic = dict(li)  # list -> dict
 
 - list vs. dict
 
-  - 검색의 성능이 필요하면 dict
+  검색의 성능이 필요하면 dict 사용
 
-    list에서 요소를 찾으려면 (for ... if ...) 루프를 돌아야함 -> O(n) (find, index 메소드도 이만큼)
+  ​	list에서 요소를 찾으려면 (for ... if ...) 루프를 돌아야함 -> O(n) (find, index 메소드도 이만큼)
 
-    숫자가 정렬이 되어있다면 -> O(logn)
+  ​	숫자가 정렬이 되어있다면 -> O(logn)
 
-    검색이 필요 없음(한번에 알아냄) -> O(1) : dict
+  ​	검색이 필요 없음(한번에 알아냄) -> O(1) : dict
 
 
 
@@ -641,8 +630,8 @@ dic = dict(li)  # list -> dict
 
 
 
-- .add(value)
-- .remove(value)
+- `.add(value)`
+- `.remove(value)`
 
 
 
@@ -665,7 +654,7 @@ dic = dict(li)  # list -> dict
 
 #### 컬렉션 관리 함수
 
-- eunmerate(seq [, start])
+- `eunmerate(seq [, start])`
 
 ```python
 # index를 같이 출력할 때 자주 사용
@@ -673,7 +662,7 @@ for num, i in enumerate(seq):
     print(num, i)
 ```
 
-- zip
+- `zip(seq1, seq2)`
 
 ```python
 # 위치기반으로 묶어 튜플로 반환
@@ -693,10 +682,10 @@ zip_dict = dict(zip(seq1, seq2))  # dictionary로 변환
 ```
 
 - functional programming : 함수를 매개변수로 전달하는 방식
-  - filter(판정함수, seq) : seq로 리턴
-  - map(함수, seq) : seq가 여러개라면 길이가 동일
-    - any(seq), all(seq)과 자주 쓰임
-  - sort
+  - `filter(판정함수, seq)` : True인 값들만 seq로 리턴
+  - `map(함수, seq)` : seq가 여러개라면 길이가 동일해야함
+    - `any(seq)`, `all(seq)`과 자주 쓰임
+  - `sort`
 
 #### 컬렉션의 사본
 
@@ -707,10 +696,10 @@ zip_dict = dict(zip(seq1, seq2))  # dictionary로 변환
 - 기본형
   - 숫자, boolean
 - 참조형의 복사본
-  - seq.copy()
+  - `seq.copy()`
   - 참조도 복사하게 됨.
-  - 깊은 복사는 import copy
-  - is : 같은 참조인지 조사 (== : 같은 데이터인지 조사)
+  - 깊은 복사는 `import copy`, `copy.deepcopy()`
+  - `is` : 같은 참조인지 조사 (== : 같은 데이터인지 조사)
 
 
 
@@ -720,9 +709,13 @@ zip_dict = dict(zip(seq1, seq2))  # dictionary로 변환
 
 ### 표준 모듈 [(실습파일)](https://github.com/hongjy127/TIL/blob/master/python/lec12.ipynb)
 
+
+
 - 파이썬에서 제공
 - 내가 직접 만드는거
 - 다른사람(외부 라이브러리)
+
+
 
 ```python
 import 모듈 [as alias]  # 모듈이 너무 길면 alias를 붙여 줄이기
@@ -803,7 +796,7 @@ raise 예외
 
 ### 파일 [(실습파일)](https://github.com/hongjy127/TIL/blob/master/python/lec14.ipynb)
 
-- open(path, mode) : 파일 열기 / close() : 파일 닫기
+- `open(path, mode)` : 파일 열기 / `close()` : 파일 닫기
   - 항상 `with open() as f`: 형식으로 작성하기
 
 | 모드 |                                            |
@@ -815,14 +808,14 @@ raise 예외
 | t    | text 모드로 열기                           |
 | b    | binary 모드로 열기(숫자)                   |
 
-- .write() : 줄바꿈 없음
+- `.write()` : 줄바꿈 없음
 - 파일읽기
-  - .read([n개의 내용])
-  - .readline() : 한 줄 읽기 (각 라인 끝에 \n이 들어있음)
-  - .readlines() : 전체 라인 읽기 (각 라인 끝에 \n이 들어있음)
+  - `.read([n개의 내용])`
+  - `.readline()` : 한 줄 읽기 (각 라인 끝에 \n이 들어있음)
+  - `.readlines()` : 전체 라인 읽기 (각 라인 끝에 \n이 들어있음)
   - EOF (end of file)
 
-- seek(위치, 기준) : 입출력 위치
+- `seek(위치, 기준)` : 입출력 위치
   - 0: 파일의 처음 위치
   - 1: 현재 위치
   - 2: 파일의 끝 위치
