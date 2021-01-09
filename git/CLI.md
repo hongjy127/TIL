@@ -17,9 +17,7 @@ CLI (Command Line Interface) <-> GUI (Graphic User Interface)
 
 터미널로 컴퓨터랑 상호작용하는 것
 
-![image-20201229230635959](git.assets/image-20201229230635959.png)
-
-
+![image-20210109153634478](CLI.assets/image-20210109153634478.png)
 
 ### CLI 기본 명령어
 
@@ -34,12 +32,10 @@ CLI (Command Line Interface) <-> GUI (Graphic User Interface)
 
 - \이 붙으면 절대경로, 안붙으면 상대경로 (working directory 기준)
 
-/ : 최상위 폴더
-~ : 홈폴더
-
-. : 자기자신
-
-.. : 상위 디렉토리
+  - / : 최상위 폴더
+  - ~ : 홈폴더
+  - . : 자기자신
+  - .. : 상위 디렉토리
 
 ---
 
@@ -64,9 +60,9 @@ CLI (Command Line Interface) <-> GUI (Graphic User Interface)
 
 `$ ls -a` : 숨겨진 파일까지 확인
 
-#### dir
+#### dir (cmd)
 
-`>dir` : directory 모든 목록 확인
+`> dir` : directory 모든 목록 확인
 
 ---
 
@@ -82,9 +78,9 @@ CLI (Command Line Interface) <-> GUI (Graphic User Interface)
 
 `$ start <file_name>` : 파일 열기 # Ctrl + click
 
-
-
 ---
+
+
 
 
 

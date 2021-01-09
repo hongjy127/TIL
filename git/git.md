@@ -23,7 +23,7 @@ Version Control System
 
 
 
-### Settings
+## Settings
 
 - 컴퓨터마다 한 번씩만 설정하는 것
 
@@ -39,17 +39,17 @@ Version Control System
 
 2. `$ cd <dir name>` 
 
-  `$ touch .gitignore` [[gitignore]](https://www.toptal.com/developers/gitignore)
+     `$ touch .gitignore` [[gitignore]](https://www.toptal.com/developers/gitignore)
 
-  `$ touch README.md` # 해당 프로젝트의 설명서 / 최상위 폴더에 만들기
+     `$ touch README.md` # 해당 프로젝트의 설명서 / 최상위 폴더에 만들기
 
-  `$ git init`
+     `$ git init`
 
 ---
 
 
 
-### Git 기본 명령어
+## Git 기본 명령어
 
 `$ git 명령어 -h` : help
 
@@ -57,19 +57,26 @@ Version Control System
 
 - Github에 백업
 
-1. `$ git init`  상태에서 (로컬 저장소)
+1. `$ git init` (로컬 저장소로 만듦) 상태에서
 2. `$ git add <dir/file_name>`
 3. `$ git commit -m 'COMMIT MESSAGE'`
-4. Github에 remote 저장소 만들기 (new repository)
-5. `$ git remote add origin <URL>` 
+4. Github에 remote 저장소 만들기 (new repository), 주소 복사
+5. `$ git remote add origin <URL>` (등록/한번만 필요)
 6. `$ git push origin master`
 
 ---
 
 - 다운로드
-	- `$ git remote add origin <URL>` 로 설정 해준 뒤,
-	- `$ git pull origin master`
-	- `$ git clone <URL>`
+
+1. `git init` 상태에서
+
+2. `$ git remote add origin <URL>` 로 설정 해준 뒤,
+
+3. `$ git pull origin master`
+
+   ​			or
+
+1. `$ git clone <URL>`
 
 ---
 
@@ -98,8 +105,8 @@ $ cd learn_git
 $ git init
 ```
 
-: learn_git 폴더를 repository (repo, 저장소) 로 만듦.
-: ls -a 을 실행하면 .git/이 생김.
+learn_git 폴더를 repository (repo, 저장소) 로 만듦.
+확인) ls -a 을 실행하면 .git/이 생김.
 
 주의)
 
@@ -111,9 +118,9 @@ $ git init
 
 `$ git log` : commits 요약
 
-`$ git log --pretty==oneline -abbrev -commit` : commit 짧게 나옴.
+​	`$ git log --pretty==oneline -abbrev -commit` : commit 짧게 나옴.
 
-` $ git log --pretty=format:"%d%s" --graphs` : commit 그래프 보기
+​	`$ git log --pretty=format:"%d%s" --graphs` : commit 그래프 보기
 
 ---
 
@@ -162,13 +169,13 @@ $ git init
 
 
 
-`$ git switch <branch>`
+`$ git switch <branch>` : branch로 이동
 
 `$ git switch -c <branch>` == `$ git checkout -b <branch>` : branch를 만들고 이동까지 같이 하는 것
 
-$ `git chechout <branch/commit_id>` : branch/commit_id 으로 HEAD가 움직임 / commit하지 말고 과거 코드를 보고오는 용으로 사용
+`$ git chechout <branch/commit_id>` : branch/commit_id 으로 HEAD가 움직임 / commit하지 말고 과거 코드를 보고오는 용으로 사용
 
-참고) git log 시 나오는 주소(commit_id)는 앞에 6개만 써도 자동완성
+참고) `$ git log` 시 나오는 주소(commit_id)는 앞에 6개만 써도 자동완성
 
 
 
