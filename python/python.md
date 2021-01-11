@@ -763,7 +763,7 @@ sys.exit(0)  # 숫자는 보통 개발자가 정하지만 관례로 0: 정상적
 
 
 
-### 예외 [(실습파일)](https://github.com/hongjy127/TIL/blob/master/python/lec13.ipynb)
+### 예외 [(실습파일)](https://github.com/hongjy127/TIL/blob/master/python/lec13)
 
 
 
@@ -794,7 +794,7 @@ raise 예외
 
 
 
-### 파일 [(실습파일)](https://github.com/hongjy127/TIL/blob/master/python/lec14.ipynb)
+### 파일 [(실습파일)](https://github.com/hongjy127/TIL/blob/master/python/lec14)
 
 - `open(path, mode)` : 파일 열기 / `close()` : 파일 닫기
   - 항상 `with open() as f`: 형식으로 작성하기
@@ -833,6 +833,43 @@ raise 예외
 
 
 ---
+
+
+
+### 클래스 [(실습파일)](https://github.com/hongjy127/TIL/blob/master/python/lec15)
+
+- 클래스명은 CamelCase로 쓰는 것이 관례
+- 멤버변수는 추가, 삭제 가능(생성자 말고 다른 변수에서도 가능하나 권장하지 않음) -> 생성자에서 None으로 해놓고 나중에 쓰기
+
+```python
+class Name:
+    def __init__(self,초기값):
+        멤버 변수 정의 및 초기화
+        
+    메서드 정의
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
