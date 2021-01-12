@@ -18,7 +18,8 @@
 
 ### vscode - python 설정
 
-- 확장> Korean Language Pack, Python, Code Runner 설치
+- 확장>Korean Language Pack, Python, Code Runner 설치
+- 확장>pylance(변수 한번에 바꾸기)
 - 관리>설정>Code-runner:Run In Terminal에 체크
 
 
@@ -851,9 +852,46 @@ class Name:
 
 
 
+`__str__` 단독으로 print 될 때(확인해야 할 멤버를 집어넣음)
+
+`__repr__` 컬렉션에 담겨져있을 때(요약본을 출력)
 
 
 
+
+
+#### 상속
+
+- 부모=Parent=Super=Base
+
+- 자식=Child=Sub
+
+  1) Override를 하지 않으면 -> 부모꺼를 그대로 씀
+
+  2) Override를 하지만 super()를 하지 않으면 -> 부모꺼 안쓰고 자식꺼로 씀(replace)
+
+  3) Override & super() -> 부모꺼에 확장
+
+```python
+class ChildClass명(ParentClass명):
+    def __init__(self,초기값):
+        super().__init__(상속받은거)		# 부모 클래스에서 상속받은거
+        self.child = child			   # 자식 클래스에서 새로 초기화 하는거
+        
+    # Override(재정의)    
+    # 그대로 사용할거면 정의하지 않아도 됨.
+    def parent_fun(self):
+        super().parent_fun()			# 부모클래스에서 상속받은거 먼저 실행
+        추가할거
+        
+    자식클래스 정의
+```
+
+
+
+
+
+##### UML
 
 
 
@@ -890,7 +928,17 @@ class Name:
 
 
 
+기존 방법 : 절차 중심 --> Top down
 
+OOP: 객체 지향방법 --> bottom up
+
+- 객체 지향 설계 원칙
+
+  1) SRP(Single Responsibility Principle) 단일 책임의 원칙
+
+  2) OCP(Open Close Principle): 확장에는 열려 있고, 변화에는 닫혀있음을 의미(기능이 추가될 때 변경사항이 없음.)
+
+- 캡슐화(데이터 은닉), 추상화(상속), 다형성(오버라이드) 
 
 
 

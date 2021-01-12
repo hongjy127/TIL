@@ -14,110 +14,38 @@
 
 
 # 모델(Model) 객체
-class Configuration:
+from app_base import Application
+from models import AddressBook
+
+class AddressBookApp(Application):
     def __init__(self):
-        # csv 파일 경로명, encoding, ... -> 설정 파일에 분석해서 초기화
-        config = self.load()
-        self.fname = config['FNAME']
-        self.encoding = config['ENCODING']
-
-    def load(self):
-        config = {}
-        with open('config.ini','rt') as f:
-            entries = f.readlines()
-            for entry in entries:
-                key, value = entry.split('=')
-                config[key.strip()] = value.strip()
-        return config
-
-    def __str__(self):
-        return f'<Configuration fname {self.fname}, encoding {self.encoding}>'
-
-# 단위 테스트(unit test)
-# config = Configuration()
-# print(config)
-
-class AddressBookEntry:
-    def __init__(self, name, phone, email, addr):
-        self.name = name
-        self.phone = phone
-        self.email = email
-        self.addr = addr
-
-    def __str__(self):
-        return f'<AddressBookEntry {self.name}, {self.phone}, {self.email}, {self.addr}>'
-    
-    def __repr__(self):
-        return f'<AddressBookEntry {self.name}>'
-
-# entry = AddressBookEntry('홍길동','010-1111-1111', 'hong@naver.com','서울')
-# print(entry)
-
-class AddressBook:  # 프로토타입 객체
-    def __init__(self):
-        self.book = []
-
-    def load(self, config):
-        with open(config.fname, 'rt', encoding=config.encoding) as f:
-            lines = f.readlines()[1:]
-            for line in lines:
-                name, phone, email, addr = line.strip().split(',')
-                # AddresssBookEntry를 생성하여 self.book에 추가
-                entry = AddressBookEntry(name, phone, email, addr)
-                self.book.append(entry)
-        # 정렬
-        self.book.sort(key=lambda a: a.name)
-
-    def add(self, name, phone, email, addr):
-        pass
-
-    def delete(self, name):
-        pass
-
-    def update(self, name, phone, email, addr):
-        pass
-
-    def __str__(self):
-        return f'<AddressBook {self.book}>'
-
-# config = Configuration()
-# book = AddressBook()
-# book.load(config)
-# print(book)
-
-import sys
-# Configuration 설정 정보 담당
-# AddressBookEntry 한 사람 주소 정보 담당
-# AddressBook 목록 관리
-
-class Application:
-    def __init__(self):
-        self.config = Configuration()
+        super().__init__()
         self.addressbook = AddressBook()
-        self.addressbook.load(self.config)        
+        self.addressbook.load(self.config)   
 
-    def select_menu(self):
-        print('1)목록, 2)상세보기, 3)추가, 4)수정, 5)삭제 6)종료')
-        menu = int(input('입력: '))
-        return menu
+    def create_menu(self, menu):
+        # 메뉴를 구성해야합니다.
+        # super().create_menu(menu)
+        menu.add('목록', self.print_book)
+        menu.add('상세보기', self.print_detail)
+        menu.add('검색', self.search)
+        menu.add('추가', self.add)
+        menu.add('수정', self.update)
+        menu.add('삭제', self.delete)
+        menu.add('종료', self.exit)        
 
-    def run(self,menu):
-        # 해당 메뉴를 실행
-            if menu==1:  # 목록
-                self.print_book()
-            elif menu==2:  # 상세보기
-                self.print_detail()
-            elif menu==3: #  추가
-                self.add()
-            elif menu==4: #  수정
-                self.update()
-            elif menu==5: #  삭제
-                self.delete()
-            elif menu==6: #  종료
-                self.exit()
-            else:
-                print('잘못 선택했습니다.')
 
+    # 검색방법: 키워드 검색... '길동' --> [홍길동, 고길동]
+    def search(self):
+        keyword = input('검색어: ')
+        result = self.addressbook.search(keyword)
+        print('='*50)
+        print(f'검색 ({len(result)}건)')
+        print('='*50)
+        for index, entry in enumerate(result,1):
+            print(f'{index:02d}] {entry.name}: {entry.phone}, {entry.email}, {entry.addr}')
+        print('-'*50)
+        
     def print_book(self):
         print('='*50)
         print('주소록')
@@ -128,32 +56,70 @@ class Application:
         print('-'*50)
 
     def print_detail(self):
-        pass
+        index = int(input('대상 선택(번호): '))  # 검색
+        entry = self.addressbook.book[index-1]
+        # entry 포멧팅 해서 출력
+        print(f'이름: {entry.name}')
+        print(f'전화번호: {entry.phone}')
+        print(f'email: {entry.email}')
+        print(f'주소: {entry.addr}')
 
     def add(self):
-        pass
+        print('새 주소록 항목 추가')
+        name = input('이름:')
+        phone = input('전화번호:')
+        email = input('이메일:')
+        addr = input('주소:')
+        self.addressbook.add(name, phone, email, addr)
 
     def update(self):
-        pass
+        index = int(input('대상 선택(번호): '))  # 검색
+        entry = self.addressbook.book[index-1]
+        print('주소록 항목 수정')
+        name = input(f'이름({entry.name}):')
+        if name.strip() == '':
+            name = entry.name
+        phone = input(f'전화번호({entry.phone}):')
+        if phone.strip() == '':
+            phone = entry.phone
+        email = input(f'이메일({entry.email}):')
+        if email.strip() == '':
+            email = entry.email
+        addr = input(f'주소({entry.addr}):')
+        if addr.strip() == '':
+            addr = entry.addr
+        self.addressbook.update(index-1, name, phone, email, addr)
 
     def delete(self):
-        pass
+        index = int(input('대상 선택(번호):'))
+        entry = self.addressbook.book[index-1]
+        ans = input(f'{entry.name}을 삭제할까요?(Y/N)')
+        if ans == 'Y':
+            self.addressbook.delete(index-1)
 
-    def exit(self):
-        sys.exit(0)
+    def destroyed(self):
+        self.addressbook.save(self.config)
+
+
 
 def main():
-    app = Application()
-    while True:
-        menu = app.select_menu()
-        app.run(menu)
+    app = AddressBookApp()
+    app.run()
 
 main()
 
 
-# 기존 방법 : 절차 중심 --> Top down
-# OOP: 객체 지향방법 --> bottom up
-# Application
-#     Configuration
-#     AddressBook
-#         AddressBookEntry
+
+# 주소록
+# 주소록 Application
+#   Configuration
+#   Menu
+#       MenuItem  
+#   AddressBook
+#       AddressBookEntry
+
+# 일기장
+# 일기장 Application
+#   Configuration
+#   Menu
+#   MenuItem
