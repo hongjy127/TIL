@@ -721,6 +721,7 @@ zip_dict = dict(zip(seq1, seq2))  # dictionary로 변환
 ```python
 import 모듈 [as alias]  # 모듈이 너무 길면 alias를 붙여 줄이기
 from 모듈 import funcname1, funcname2 ...  # 모듈에서 일부 함수만 가져옴
+										  # naming 충돌 가능성, 가독성 떨어짐
 ```
 
 - 자주사용
@@ -852,14 +853,6 @@ class Name:
 
 
 
-`__str__` 단독으로 print 될 때(확인해야 할 멤버를 집어넣음)
-
-`__repr__` 컬렉션에 담겨져있을 때(요약본을 출력)
-
-
-
-
-
 #### 상속
 
 - 부모=Parent=Super=Base
@@ -871,6 +864,8 @@ class Name:
   2) Override를 하지만 super()를 하지 않으면 -> 부모꺼 안쓰고 자식꺼로 씀(replace)
 
   3) Override & super() -> 부모꺼에 확장
+
+- 상속을 하지 않는 경우 모든 클래스는 object를 상속 -> dir(인스턴스)에서 확인
 
 ```python
 class ChildClass명(ParentClass명):
@@ -889,19 +884,94 @@ class ChildClass명(ParentClass명):
 
 
 
-
-
 ##### UML
 
 
 
 
 
+#### 액세스
+
+- getter/setter
+
+```python
+@property
+
+
+@asdf.setter
+```
+
+둘 다 인스턴스와 무관
+
+@classmethod
+
+첫번째 변수는 반드시 클래스 참조가 넘어감
+
+@staticmethod
+
+변수 없음
+
+
+
+연산자 메서드
+
+
+
+`__str__` 단독으로 print 될 때(확인해야 할 멤버를 집어넣음)
+
+`__repr__` 컬렉션에 담겨져있을 때(요약본을 출력)
 
 
 
 
 
+### 모듈과 패키지
+
+#### 모듈
+
+`__name__`
+
+
+
+
+
+#### 패키지
+
+모든 폴더에 `__init__.py` 필요
+
+
+
+패키지 설치
+
+`$ pip install beautifulsoup4`
+
+`$ pip freeze`
+
+`$ pip freeze > modules.req` : 설치한 패키지를 파일화
+
+`$ pip install -r modules.req` : 다시 설치
+
+
+
+#### 가상환경
+
+격리된 독립적인 파이썬 환경을 만들어줌
+
+하나의 파이썬에는 한 라이브러리에 대해 하나의 버전만 설치 가능
+
+--> 프로젝트마다 가상환경을 만들어주기
+
+conda 사용(터미널에서 진행)
+
+`$ conda env list` : 가상환경 리스트
+
+`$ conda create --name <가상환경 이름> python=<파이썬 버전>` : 새로운 가상환경 만들기
+
+`$ conda remove --name <가상환경 이름> python=<파이썬 버전>` : 새로운 가상환경 만들기
+
+`$ conda active <가상환경 이름>`
+
+`$ conda decative` : 현재 가상환경 벗어나기
 
 
 
