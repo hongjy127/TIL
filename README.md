@@ -19,8 +19,8 @@
 
 ### Python
 
-- [basic](https://github.com/hongjy127/TIL/blob/master/python/basic/python.md)
-- [network programming](https://github.com/hongjy127/TIL/blob/master/python/network-programming/network-programming.md)
+- [basic](https://github.com/hongjy127/TIL/blob/master/python/python.md)
+- [network programming](https://github.com/hongjy127/TIL/blob/master/python/network%20programming.md)
 
 
 
