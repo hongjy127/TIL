@@ -19,12 +19,12 @@
 
 ### Python
 
-- [기본문법](https://github.com/hongjy127/TIL/blob/master/python/python.md)
-- [network programming](https://github.com/hongjy127/TIL/blob/master/python/network programming.md)
+- [basic](https://github.com/hongjy127/TIL/blob/master/python/basic/python.md)
+- [network programming](https://github.com/hongjy127/TIL/blob/master/python/network-programming/network-programming.md)
 
 
 
 ### Coding Test
 
-- [programmers](https://github.com/hongjy127/TIL/blob/master/conding test/programmers/programmers.md)
+- [programmers](https://github.com/hongjy127/TIL/blob/master/coding_test/programmers/programmers.md)
 

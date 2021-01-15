@@ -1,3 +1,4 @@
+# 순회 가능한 객체로 만들기
 def seqgen(data):
     for index in range(0, len(data), 2):
         yield data[index:index+2]
