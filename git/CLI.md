@@ -17,7 +17,7 @@ CLI (Command Line Interface) <-> GUI (Graphic User Interface)
 
 터미널로 컴퓨터랑 상호작용하는 것
 
-![image-20210109153634478](CLI.assets/image-20210109153634478.png)
+![image-20210109153634478](image/image-20210109153634478.png)
 
 ### CLI 기본 명령어
 
@@ -37,12 +37,12 @@ CLI (Command Line Interface) <-> GUI (Graphic User Interface)
   - . : 자기자신
   - .. : 상위 디렉토리
 
----
+
 
 #### mkdir
 `$ mkdir <dir_name>` : 새로운 directory (폴더) 만들기
 
----
+
 
 #### touch
 `$ touch <file_name>` : 새로운 파일 만들기
@@ -52,7 +52,7 @@ CLI (Command Line Interface) <-> GUI (Graphic User Interface)
 
 `$ touch index.html`
 
----
+
 
 #### ls (git에서)
 
@@ -64,7 +64,7 @@ CLI (Command Line Interface) <-> GUI (Graphic User Interface)
 
 `> dir` : directory 모든 목록 확인
 
----
+
 
 #### rm
 
@@ -72,13 +72,11 @@ CLI (Command Line Interface) <-> GUI (Graphic User Interface)
 
 #### mv
 
----
+
 
 #### start
 
 `$ start <file_name>` : 파일 열기 # Ctrl + click
-
----
 
 
 

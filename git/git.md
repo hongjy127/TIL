@@ -31,7 +31,7 @@ Version Control System
 
 `git config --global user.email "이메일"`
 
----
+
 
 - Project 생성 시 설정하는 것
 
@@ -45,7 +45,7 @@ Version Control System
 
      `$ git init`
 
----
+
 
 
 
@@ -53,7 +53,7 @@ Version Control System
 
 `$ git 명령어 -h` : help
 
----
+
 
 - Github에 백업
 
@@ -64,7 +64,7 @@ Version Control System
 5. `$ git remote add origin <URL>` (등록/한번만 필요)
 6. `$ git push origin master`
 
----
+
 
 - 다운로드
 
@@ -72,13 +72,10 @@ Version Control System
 
 2. `$ git remote add origin <URL>` 로 설정 해준 뒤,
 
-3. `$ git pull origin master`
+3. `$ git pull origin master` or `$ git clone <URL>`
 
-   ​			or
 
-1. `$ git clone <URL>`
 
----
 
 - Github로 협업하기 (branch)
 
@@ -86,7 +83,7 @@ Version Control System
   - `$ git branch <branch_name>`
   - `$ git merge <branch>`
 
----
+
 
 - Git 상태 확인
 	- `$ git log`
@@ -96,23 +93,19 @@ Version Control System
 
 
 
-
 ## Git 공부
 
+- repository (repo, 저장소) 만들기
 
-```
-$ cd learn_git
-$ git init
-```
+`$ cd <dir name>` : 파일경로에서
 
-learn_git 폴더를 repository (repo, 저장소) 로 만듦.
-확인) ls -a 을 실행하면 .git/이 생김.
+`$ git init` : 실행하면 dir를 repo로 만듦.
 
-주의)
+<span style="color:red">주의) home 폴더에 적용하면 안됨</span>
 
-`$ git init` 를 home 폴더에 적용하면 안됨.
+`$ ls -a` : 실행하면 .git/이 생김(확인)
 
----
+- 상태 확인
 
 `$ git status ` : 현재 상태 보기
 
@@ -122,7 +115,7 @@ learn_git 폴더를 repository (repo, 저장소) 로 만듦.
 
 ​	`$ git log --pretty=format:"%d%s" --graphs` : commit 그래프 보기
 
----
+
 
 ### add/commit
 
@@ -132,7 +125,7 @@ learn_git 폴더를 repository (repo, 저장소) 로 만듦.
 
 `$ git commit -m 'COMMIT_MESSAGE'` : commit
 
-![image-20201230001553477](git.assets/image-20201230001553477.png)
+![image-20201230001553477](image/image-20201230001553477.png)
 
 `$ git rm --cached <dir/file_name>`  : tracking 취소
 
@@ -140,7 +133,7 @@ learn_git 폴더를 repository (repo, 저장소) 로 만듦.
 
 `$ git restore <dir/file_name>` : 복원 (잘 안씀)
 
----
+
 
 ### github에 올리기
 
@@ -148,7 +141,7 @@ learn_git 폴더를 repository (repo, 저장소) 로 만듦.
 
 `$ git push <remote_name> <branch>` : remote_name을 push (git hub에 백업됨.)
 
----
+
 
 ### Branch 만들기
 
@@ -157,7 +150,7 @@ learn_git 폴더를 repository (repo, 저장소) 로 만듦.
 * 협업할 때 branch로 작업 후 github에서 merge
 * git flow, github flow
 
----
+
 
 `$ git branch` : branch 목록 보기
 
@@ -181,9 +174,9 @@ learn_git 폴더를 repository (repo, 저장소) 로 만듦.
 
 `$ git merge <branch>` : master branch로 가서 합쳐야 함. / 합쳐지면 알아서 commit이 생김
 
+
+
 ----
-
-
 
 
 
