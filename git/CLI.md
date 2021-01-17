@@ -68,9 +68,15 @@ CLI (Command Line Interface) <-> GUI (Graphic User Interface)
 
 #### rm
 
-#### rm -r
+`$ rm <file_name>` : 파일 삭제
+
+`$ rm -r <file_name>`
+
+
 
 #### mv
+
+`$ git mv <원본 이름> <변경할 이름>`
 
 
 

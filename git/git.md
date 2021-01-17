@@ -23,13 +23,15 @@ Version Control System
 
 
 
+
+
 ## Settings
 
 - 컴퓨터마다 한 번씩만 설정하는 것
 
-`git config --global user.name "이름"`
+  `git config --global user.name "이름"`
 
-`git config --global user.email "이메일"`
+  `git config --global user.email "이메일"`
 
 
 
@@ -39,11 +41,11 @@ Version Control System
 
 2. `$ cd <dir name>` 
 
+     `$ git init`
+
      `$ touch .gitignore` [[gitignore]](https://www.toptal.com/developers/gitignore)
 
      `$ touch README.md` # 해당 프로젝트의 설명서 / 최상위 폴더에 만들기
-
-     `$ git init`
 
 
 
@@ -51,18 +53,25 @@ Version Control System
 
 ## Git 기본 명령어
 
-`$ git 명령어 -h` : help
+​	`$ git 명령어 -h` : help
 
 
 
 - Github에 백업
 
 1. `$ git init` (로컬 저장소로 만듦) 상태에서
+
 2. `$ git add <dir/file_name>`
+
 3. `$ git commit -m 'COMMIT MESSAGE'`
+
 4. Github에 remote 저장소 만들기 (new repository), 주소 복사
+
 5. `$ git remote add origin <URL>` (등록/한번만 필요)
+
 6. `$ git push origin master`
+
+   **만들어져 있는 경우 2, 3, 6 반복**
 
 
 
@@ -70,9 +79,13 @@ Version Control System
 
 1. `git init` 상태에서
 
-2. `$ git remote add origin <URL>` 로 설정 해준 뒤,
+2. `$ git remote add origin <URL>` 로 설정 해준 뒤(Github 주소 복사),
 
-3. `$ git pull origin master` or `$ git clone <URL>`
+3. `$ git pull origin master` 
+
+   or
+
+​	1. `$ git clone <URL>` : clone으로 받은 ropo는 `$ git init`이 필요하지 않음. (config 설정이 되어있음.)
 
 
 
@@ -119,15 +132,13 @@ Version Control System
 
 ### add/commit
 
+git은 바뀐 내용만 저장
+
 `$ git add <dir/file_name>` : 등록 or tracking
 
 `$ git add .`  : directory 전체 올리기
 
 `$ git commit -m 'COMMIT_MESSAGE'` : commit
-
-![image-20201230001553477](image/image-20201230001553477.png)
-
-`$ git rm --cached <dir/file_name>`  : tracking 취소
 
 `$ git restore --staged <dir/file_name>`  : stage에서 내리기
 
@@ -139,7 +150,17 @@ Version Control System
 
 `$ git remote add <remote_name> <URL>` : URL을 remote_name(주로 origin)으로 등록 (한 번만 등록)
 
+`$ git remote -v` : 모든 저장소 보여주기
+
 `$ git push <remote_name> <branch>` : remote_name을 push (git hub에 백업됨.)
+
+`$ git rm` : 원격 저장소와 로컬 저장소 파일 삭제
+
+`$ git rm --cached <dir/file_name>`  : 원격 저장소 파일 삭제, 로컬 저장소는 유지
+
+
+
+<img src="image/image-20210117202710629.png" alt="image-20210117202710629" style="zoom:67%;" />
 
 
 
@@ -156,23 +177,34 @@ Version Control System
 
 `$ git branch <branch_name>` : branch 만들기
 
-`$ git branch -d <branch_name>` : branch 삭제
-
-`$ git branch -D <branch_name>` : branch 강제 삭제
 
 
-
-`$ git switch <branch>` : branch로 이동
+`$ git switch <branch>` : branch로 이동 (HEAD -> \<branch>)
 
 `$ git switch -c <branch>` == `$ git checkout -b <branch>` : branch를 만들고 이동까지 같이 하는 것
 
-`$ git chechout <branch/commit_id>` : branch/commit_id 으로 HEAD가 움직임 / commit하지 말고 과거 코드를 보고오는 용으로 사용
+`$ git chechout <branch/commit_id>` : branch/commit_id 으로 HEAD가 움직임 / commit하지 않고 과거 코드를 보고오는 용으로 사용
+
+`$ git reset` : commit을 없애고 돌아감
 
 참고) `$ git log` 시 나오는 주소(commit_id)는 앞에 6개만 써도 자동완성
 
 
 
 `$ git merge <branch>` : master branch로 가서 합쳐야 함. / 합쳐지면 알아서 commit이 생김
+
+`$ git branch -d <branch_name>` : branch 삭제 (merge가 끝난 branch는 삭제하는 것이 좋음.)
+
+`$ git branch -D <branch_name>` : branch 강제 삭제
+
+
+
+- 협업할 때
+
+  settings > manage access > invite a collaborator > username > email 승인 > `$ git clone <URL>`
+
+  - sync 맞는지 확인하기 위해 `$ git pull`, `$ git push` 해보기
+  - branch를 따고 merge는 꼭 remote 저장소 (github)에서 진행 (conflict 방지)
 
 
 
