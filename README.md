@@ -26,5 +26,5 @@
 
 ### Coding Test
 
-- [programmers](https://github.com/hongjy127/TIL/blob/master/coding_test)
+- [programmers](https://github.com/hongjy127/TIL/tree/master/coding_test)
 
