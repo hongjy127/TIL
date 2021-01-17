@@ -160,7 +160,7 @@ git은 바뀐 내용만 저장
 
 
 
-<img src="image/image-20210117202710629.png" alt="image-20210117202710629" style="zoom:67%;" />
+<img src="image/image-20210117202710629.png" alt="image-20210117202710629" style="zoom: 50%;" />
 
 
 
