@@ -19,12 +19,12 @@
 
 ### Python
 
-- [basic](https://github.com/hongjy127/TIL/blob/master/python/python.md)
-- [network programming](https://github.com/hongjy127/TIL/blob/master/python/network%20programming.md)
+- [basic](https://github.com/hongjy127/TIL/blob/master/python/basic)
+- [network programming](https://github.com/hongjy127/TIL/blob/master/python/network%20programming)
 
 
 
 ### Coding Test
 
-- [programmers](https://github.com/hongjy127/TIL/blob/master/coding_test/README.md)
+- [programmers](https://github.com/hongjy127/TIL/blob/master/coding_test)
 
