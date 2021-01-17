@@ -782,7 +782,7 @@ zip_dict = dict(zip(seq1, seq2))  # dictionary로 변환
   - heap에 저장됨
   - 참조값은 수정할 수 없음(C에서만 가능)
 
-<img src="README.assets/image-20210118013650994.png" alt="image-20210118013650994" style="zoom:50%;" />
+<img src="README.assets/image-20210118013650994.png" alt="image-20210118013650994" style="zoom: 33%;" />
 
 - 기본형
   - 숫자, boolean
@@ -971,7 +971,7 @@ class Name:
 
   ###### 참고) UML
 
-<img src="README.assets/image-20210118030737081.png" alt="image-20210118030737081" style="zoom:50%;" />
+<img src="README.assets/image-20210118030737081.png" alt="image-20210118030737081" style="zoom: 33%;" />
 
 - 상속을 하지 않는 경우 모든 클래스는 object를 상속 -> dir(인스턴스)에서 확인
 
