@@ -26,5 +26,5 @@
 
 ### Coding Test
 
-- [programmers](https://github.com/hongjy127/TIL/blob/master/coding_test/programmers/programmers.md)
+- [programmers](https://github.com/hongjy127/TIL/blob/master/coding_test/README.md)
 
