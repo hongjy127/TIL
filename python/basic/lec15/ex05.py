@@ -17,6 +17,7 @@ class Student(Human):
         # Human.__init__(self,name,age)
         self.stunum = stunum
 
+    # Override 확인
     # def intro(self):
     #     #super().intro()
     #     print(f'학번: {self.stunum}')
@@ -28,6 +29,7 @@ class Student(Human):
 class Student(Human,Player):
     def __init__(self, name, age, gender, stunum):
         # super().__init__(name, age)
+        # 다중상속인 경우 이렇게 초기화함
         Human.__init__(self,name,age)
         Player.__init__(self,gender)
         self.stunum = stunum

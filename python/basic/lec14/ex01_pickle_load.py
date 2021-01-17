@@ -8,16 +8,16 @@ def load(fpath):
     with open(fpath,'rb') as f:
         return pickle.load(f)
 
-# 예외가 load 파일에 있었다면 lines가 None이 되기 때문에
+# 예외가 load 파일에 있었다면 lines가 None이 되기 때문에 main에 예외 추가
 def main():
     if len(sys.argv) !=2:
         print("파일명을 입력하세요")
-        print("python ex02.py data.dat")
+        print("python ex01_pickle_load.py ex01_data.dat")
         sys.exit(0)
     fname = sys.argv[1]
 
     try:
-        # data = load('data.dat')
+        # data = load('ex01_data.dat')
         data = load(fname)
         print(data)
 

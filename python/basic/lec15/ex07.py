@@ -17,22 +17,22 @@ class Boiler:
 
 
 class Controller:
-    def __init__(self, base,func):  # 주입: injection
+    def __init__(self, base, func):  # 주입: injection
         self.base = base
         # self.bolier = Boiler()
         self.func = func
-        self._temp = 10
+        self.__temp = 10
     
     @property
     def temp(self):
-        return self._temp
+        return self.__temp
 
     @temp.setter
     def temp(self, value):
         if value < self.base:
             # self.bolier.on()
             self.func()
-        self._temp = value
+        self.__temp = value
 
 tsensor = TempSensor()
 bolier = Boiler()

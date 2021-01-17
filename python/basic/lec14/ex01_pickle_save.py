@@ -12,7 +12,7 @@ def convert(lines):  # list -> dict (학생이름: key, 성적 리스트: value)
         items = line.split(',')
         name = items[0]  # 학생이름
         scores = items[1:]  # 성적 리스트
-        data[name] = list(map(int,scores))  # 사전에 추가(white 문자도 삭제)
+        data[name] = list(map(int,scores))  # 사전에 추가(int를 사용하면 white 문자도 삭제)
     return data
 
 import pickle
@@ -24,13 +24,13 @@ def save(fpath, data):
 # 예외가 load 파일에 있었다면 lines가 None이 되기 때문에
 def main():
     try:
-        lines = load('data.csv')  # hard coding - 안좋아! -> input, sys.argv, config.ini
+        lines = load('ex01_data.csv')  # hard coding - 안좋아! -> input, sys.argv, config.ini
         # fpath = input("파일명: ")
         # lines = load(fpath)
         # print(lines)
         data = convert(lines)  # 이런 작업들을 맨날 하지 않으려면 data(dict)를 저장 -> pickle
         print(data)
-        save('data.dat', data)
+        save('ex01_data.dat', data)
 
     except Exception as e:
         print(f"예외발생: {e}")

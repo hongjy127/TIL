@@ -22,7 +22,33 @@
 - 확장>pylance(변수 한번에 바꾸기)
 - 관리>설정>Code-runner:Run In Terminal에 체크
 
+#### 단축키
 
+`ctrl + /` : 주석
+
+
+
+### 가상환경 설정 - conda 사용
+
+: 하나의 파이썬에는 한 라이브러리에 대해 하나의 버전만 설치 가능
+
+프로젝트마다 가상환경을 만들어주고 격리된 독립적인 파이썬 환경을 만들어줌
+
+`$ conda env list` : 가상환경 리스트
+
+`$ conda create --name <가상환경 이름> python=<파이썬 버전>` : 새로운 가상환경 만들기
+
+`$ conda remove --name <가상환경 이름> --all` : 가상환경 삭제
+
+`$ conda active <가상환경 이름>`
+
+`$ conda decative` : 현재 가상환경 벗어나기
+
+- 동일한 패키지 설치하기
+
+`$ pip freeze > modules.req` : 설치한 패키지를 파일화
+
+`$ pip install -r modules.req` : 다시 설치
 
 
 
@@ -30,7 +56,39 @@
 
 
 
-### 기본 구조 [(실습파일)](https://github.com/hongjy127/TIL/blob/master/python/lec01.ipynb)
+### 주의할 점들 (관례)
+
+- 변수 만들 때 관례
+  - 변수명: 명사
+  - 함수명: 동사_목적어
+- 되도록 함수로 만들어서 사용
+  - 단일책임의 원칙
+  - hard coding  피하기 (전역변수는 최대한 피하기)
+    - input
+    - sys.argv
+    - config.ini
+- try/except 사용
+- \ufeff - ms의 utf-8에 이게 항상 붙음
+
+
+
+### 설계 원칙
+
+기존 방법 : 절차 중심 --> Top down
+
+**OOP: 객체 지향방법 --> bottom up**
+
+- 객체 지향 설계 원칙
+
+  1) **SRP**(Single Responsibility Principle) 단일 책임의 원칙
+
+  2) **OCP**(Open Close Principle): 확장에는 열려 있고, 변화에는 닫혀있음을 의미(기능이 추가될 때 변경사항이 없음.)
+
+- 캡슐화(데이터 은닉), 추상화(상속), 다형성(오버라이드) 
+
+
+
+### 기본 구조 [(실습파일)](https://github.com/hongjy127/TIL/blob/master/python/basic/lec01.ipynb)
 
 - 들여쓰기 필수
 - 대, 소문자 구분
@@ -38,20 +96,21 @@
 
 
 ```python
-help(함수명)  # 도움말
+help(함수명)	# 도움말
 ```
 - 출력
 ```python
 print(출력 내용)
-print(출력 내용, sep=구분자, end=끝문자)  # 출력
+print(출력 내용 [, sep=구분자] [, end=끝문자])	# 출력
 ```
 
 - 입력
 
-  input 함수는 문자열 타입으로 리턴
+  input 함수는 **문자열** 타입으로 리턴
 
 ```python
 variable = input('질문내용')
+variable = int(input('질문내용'))	# 원하는 타입으로 바꿔주기
 ```
 
 
@@ -60,7 +119,7 @@ variable = input('질문내용')
 
 
 
-### 변수 [(실습파일)](https://github.com/hongjy127/TIL/blob/master/python/lec02.ipynb)
+### 변수 [(실습파일)](https://github.com/hongjy127/TIL/blob/master/python/basic/lec02.ipynb)
 
 - 값을 저장하고 있는 메모리
 - 알파벳, 밑줄, 숫자로 구성 / 첫 글자는 숫자 사용 불가 / 대소문자 구분
@@ -112,8 +171,12 @@ CamelCase : subjectTotalSum (Java, JavaScript)
 #### 문자열
 
 - 한 줄로 표현 - 큰 따옴표(" "), 작은 따옴표(' ')로 묶음.
+
 - 여러 줄로 표현 - 삼중따옴표(""" """)
-- 문자열 확장(문자 이스케이프)
+
+- 문자열 확장(**문자 이스케이프**)
+
+  이스케이프와 겹치지 않기 위해 파일경로를 쓸 때 \대신 /를 사용
 
 | 확장열 | 설명        |
 | ------ | ----------- |
@@ -183,10 +246,11 @@ chr(숫자)  # 숫자 -> 문자열
 
 
 
-### 연산자 [(실습파일)](https://github.com/hongjy127/TIL/blob/master/python/lec04.ipynb)
+### 연산자 [(실습파일)](https://github.com/hongjy127/TIL/blob/master/python/basic/lec04.ipynb)
 
 #### 대입 연산자
 
+- `=`
 - 값을 지정해 변수에 저장하는 것
 
 #### 산술연산자
@@ -242,7 +306,7 @@ chr(숫자)  # 숫자 -> 문자열
 
 
 
-### 조건문 [(실습파일)](https://github.com/hongjy127/TIL/blob/master/python/lec05.ipynb)
+### 조건문 [(실습파일)](https://github.com/hongjy127/TIL/blob/master/python/basic/lec05.ipynb)
 
 #### if 문
 
@@ -280,7 +344,7 @@ else:
 
 
 
-### 반복문 [(실습파일)](https://github.com/hongjy127/TIL/blob/master/python/lec06.ipynb)
+### 반복문 [(실습파일)](https://github.com/hongjy127/TIL/blob/master/python/basic/lec06.ipynb)
 
 #### while문
 
@@ -327,7 +391,7 @@ for 제어변수1 in 컬렉션1:
 
 
 
-### 함수 [(실습파일)](https://github.com/hongjy127/TIL/blob/master/python/lec07.ipynb)
+### 함수 [(실습파일)](https://github.com/hongjy127/TIL/blob/master/python/basic/lec07.ipynb)
 
 - 함수정의
 
@@ -342,7 +406,7 @@ def funcname(parameter_list):
 함수명(인수 목록)  # 함수 호출
 ```
 
-- 람다함수
+- lambda 함수
 
   함수 이름이 없음, 재사용하지 않음(functional programming)
 
@@ -363,7 +427,7 @@ def funcname(인수명 = 기본값):
 
 - 가변 인수
 
-  인수의 수가 고정되지 않고, 호출 시 원하는 만큼 지정할 수 있음
+  인수의 수가 고정되지 않고, 호출 시 원하는 개수만큼 지정할 수 있음
 
   함수에서는 튜플로 변수를 받음
 
@@ -372,12 +436,15 @@ def funcname(인수명 = 기본값):
 ```python
 def funcname(*인수명):
     명령 블록
-    return 리턴값    
+    return 리턴값
+
+# 호출 시 컬렉션으로 넣으려면
+funcname(*list)
 ```
 
 - 키워드 가변 인수
   - **로 지정한 타입은 dictionary
-  - 일반 인수, 가변 인수, 키워드 가변 인수 순서로 배치
+  - **일반 인수, 가변 인수, 키워드 가변 인수** 순서로 배치
     - `funcname(인수1, 인수2, *가변인수, **키워드가변인수1, **키워드가변인수2)`
   - 키워드 가변 인수는 여러개 사용 가능
 
@@ -385,6 +452,9 @@ def funcname(*인수명):
 def funcname(**인수명):
     명령 블록
     return 리턴값    
+
+# 호출 시 dictionary를 넣으려면
+funcname(**dict)
 ```
 
 #### 변수
@@ -408,7 +478,7 @@ def funcname(**인수명):
 
 
 
-### 문자열 관리 [(실습파일)](https://github.com/hongjy127/TIL/blob/master/python/lec08.ipynb)
+### 문자열 관리 [(실습파일)](https://github.com/hongjy127/TIL/blob/master/python/basic/lec08.ipynb)
 
 문자열은 순서를 가지는 컬렉션 -> sequence
 
@@ -435,7 +505,7 @@ def funcname(**인수명):
 - `word in str`
 - `word not in str`
 - `word.startswith(str)`
-- `word.endtswith(str)`
+- `word.endswith(str)`
 
 #### 기타 메서드
 
@@ -454,7 +524,7 @@ def funcname(**인수명):
 
 #### 변경
 
-문자열은 불변객체로 다른 값으로 바꾸지 못함 -> 원본을 읽어 새로운 문자열을 만들어줌
+문자열은 **불변객체**로 다른 값으로 바꾸지 못함 -> 원본을 읽어 새로운 문자열을 만들어줌
 
 - `.lower()`
 - `.upper()`
@@ -493,7 +563,7 @@ def funcname(**인수명):
 
 `"{:포맷문자열}".format(값)`
 
-- Python3.7부터 지원하는 새로운 방법(f-string)
+- **Python3.7부터 지원하는 새로운 방법(f-string)**
 
 `f"{값}"`
 
@@ -509,7 +579,7 @@ def funcname(**인수명):
 
 
 
-### 리스트와 튜플 [(실습파일)](https://github.com/hongjy127/TIL/blob/master/python/lec09.ipynb)
+### 리스트와 튜플 [(실습파일)](https://github.com/hongjy127/TIL/blob/master/python/basic/lec09.ipynb)
 
 #### 리스트
 
@@ -544,25 +614,40 @@ def funcname(**인수명):
 
 - `.index(값)` : list에서 값을 찾아 index를 반환, 없으면 예외 발생
 - `.count(값)` : 값이 리스트에 몇 번 나오는지 계산
+- `len(seq`
+- `min(seq)` `max(seq)`
 - `값 in seq`
 - `값 not in seq`
 
 ##### 정렬
 
-- `sort([reverse=True][key=키에 적용할 함수])` : 리스트를 정렬(디폴트 오름차순), 메서드
+- `.sort(seq,[reverse=True][, key=키에 적용할 함수])` : 리스트를 정렬(디폴트 오름차순), 메서드
+- `sorted(seq,[reverse=True][, key=키에 적용할 함수])` : 정렬함수
 - `.reverse()` : 리스트의 순서를 역으로, 메서드
-- `sorted(seq)` : 정렬함수
 
 .
 
 #### 튜플
 
 - ( , , ) (괄호 생략 가능)
+
 - 리스트보다 속도가 빠름
+
 - indexing, slicing 가능
+
 - indexing으로 수정, 삭제 불가능 (읽기전용)
 
-- unpacking, swap, return 튜플 (함수는 값을 하나만 리턴 가능, 튜플 하나를 리턴하는건 가능)
+- **unpacking**
+
+  `value1, value2, value3 = li`
+
+- **swap**
+
+  `a, b = b, a`
+
+- **return** 튜플
+
+  함수는 값을 하나만 리턴 가능, 튜플 하나를 리턴하는건 가능
 
 
 
@@ -570,7 +655,7 @@ def funcname(**인수명):
 
 
 
-### 사전과 집합 [(실습파일)](https://github.com/hongjy127/TIL/blob/master/python/lec10.ipynb)
+### 사전과 집합 [(실습파일)](https://github.com/hongjy127/TIL/blob/master/python/basic/lec10.ipynb)
 
 #### dictionary
 
@@ -651,7 +736,7 @@ dic = dict(li)  # list -> dict
 
 
 
-### 컬렉션 관리 [(실습파일)](https://github.com/hongjy127/TIL/blob/master/python/lec11.ipynb)
+### 컬렉션 관리 [(실습파일)](https://github.com/hongjy127/TIL/blob/master/python/basic/lec11.ipynb)
 
 #### 컬렉션 관리 함수
 
@@ -663,7 +748,7 @@ for num, i in enumerate(seq):
     print(num, i)
 ```
 
-- `zip(seq1, seq2)`
+- `zip(seq1, seq2)` -> `[(value1, value2), ...]`
 
 ```python
 # 위치기반으로 묶어 튜플로 반환
@@ -682,11 +767,13 @@ zip_list = list(zip(seq1, seq2))  # list로 변환
 zip_dict = dict(zip(seq1, seq2))  # dictionary로 변환
 ```
 
-- functional programming : 함수를 매개변수로 전달하는 방식
-  - `filter(판정함수, seq)` : True인 값들만 seq로 리턴
-  - `map(함수, seq)` : seq가 여러개라면 길이가 동일해야함
-    - `any(seq)`, `all(seq)`과 자주 쓰임
-  - `sort`
+##### functional programming
+
+: 함수를 매개변수로 전달하는 방식, lambda와 자주 사용
+
+- `filter(판정함수, seq)` : True인 값들만 seq로 리턴
+- `map(함수, seq)` : seq가 여러개라면 길이가 동일해야함
+  - `any(seq)`, `all(seq)`과 자주 쓰임
 
 #### 컬렉션의 사본
 
@@ -694,6 +781,9 @@ zip_dict = dict(zip(seq1, seq2))  # dictionary로 변환
   - list, 문자열(숫자, boolean 빼고 다)
   - heap에 저장됨
   - 참조값은 수정할 수 없음(C에서만 가능)
+
+<img src="README.assets/image-20210118013650994.png" alt="image-20210118013650994" style="zoom:50%;" />
+
 - 기본형
   - 숫자, boolean
 - 참조형의 복사본
@@ -708,13 +798,13 @@ zip_dict = dict(zip(seq1, seq2))  # dictionary로 변환
 
 
 
-### 표준 모듈 [(실습파일)](https://github.com/hongjy127/TIL/blob/master/python/lec12.ipynb)
+### 표준 모듈 [(실습파일)](https://github.com/hongjy127/TIL/blob/master/python/basic/lec12.ipynb)
 
 
 
 - 파이썬에서 제공
 - 내가 직접 만드는거
-- 다른사람(외부 라이브러리)
+- 다른사람(외부 라이브러리, third party library)
 
 
 
@@ -757,6 +847,7 @@ random.randrange(begin,end)  # end 미포함
 import sys
 
 sys.exit(0)  # 숫자는 보통 개발자가 정하지만 관례로 0: 정상적인 종료 상태
+sys.argv	# 파일경로가 항상 먼저
 ```
 
 
@@ -765,18 +856,21 @@ sys.exit(0)  # 숫자는 보통 개발자가 정하지만 관례로 0: 정상적
 
 
 
-### 예외 [(실습파일)](https://github.com/hongjy127/TIL/blob/master/python/lec13)
+### 예외 [(실습파일)](https://github.com/hongjy127/TIL/blob/master/python/basic/lec13)
 
-
+- 복구 가능한 에러 == 예외
 
 - try/except : 쓰는 습관 들이기
-  - 예외 종류: NameError, ValueError, zeroDevisionError, IndexError, TypeError
+  - 예외 종류: NameError, ValueError, zeroDevisionError, IndexError, TypeError, ...
 
 ```python
 try:
 	명령 블록(내가 원래 하고자 하는것)
 except 예외 as 변수:
     오류 처리문
+# 예외 이름을 모를 때
+# except Except as e:
+#    print(e)
 else:
     명령 블록(예외가 발생할 때)
 ```
@@ -787,7 +881,7 @@ else:
 raise 예외
 ```
 
-- finally : 예외와 관련 없이 항상 호출(cleanup 수행)
+- **finally** : 예외와 관련 없이 항상 호출(**cleanup 수행**)
 - assert 조건, 메세지 : 조건이 True이면 통과, False이면 예외발생
 
 
@@ -796,10 +890,11 @@ raise 예외
 
 
 
-### 파일 [(실습파일)](https://github.com/hongjy127/TIL/blob/master/python/lec14)
+### 파일 [(실습파일)](https://github.com/hongjy127/TIL/blob/master/python/basic/lec14)
 
 - `open(path, mode)` : 파일 열기 / `close()` : 파일 닫기
-  - 항상 `with open() as f`: 형식으로 작성하기
+  - 항상 `with open() as f` 형식으로 작성하기 (파일을 항상 닫기 위해)
+  - filepath : 상대경로인 경우 working directory 기중으로 표현
 
 | 모드 |                                            |
 | ---- | ------------------------------------------ |
@@ -824,7 +919,9 @@ raise 예외
 
 #### pickle 모듈
 
-- 파이썬의 자료형(python에서만 사용 가능)
+```import pickle```
+
+- 파이썬의 자료형(python에서만 사용 가능, 다른 언어와 호환 안됨.)
 - 저장하기
   - `pickle.dump(data, file)`
   - file : "bw"로 오픈한 파일 객체
@@ -838,7 +935,10 @@ raise 예외
 
 
 
-### 클래스 [(실습파일)](https://github.com/hongjy127/TIL/blob/master/python/lec15)
+### 클래스 [(실습파일)](https://github.com/hongjy127/TIL/blob/master/python/basic/lec15)
+
+- 클래스, 메서드, 인스턴스
+- 식별자(identifier): 변수명, 함수명, 클래스명, 메소드명 등... 주로 개발자가 명명한 이름
 
 - 클래스명은 CamelCase로 쓰는 것이 관례
 - 멤버변수는 추가, 삭제 가능(생성자 말고 다른 변수에서도 가능하나 권장하지 않음) -> 생성자에서 None으로 해놓고 나중에 쓰기
@@ -865,12 +965,22 @@ class Name:
 
   3) Override & super() -> 부모꺼에 확장
 
+- 추상화(abstract)
+
+  <img src="README.assets/image-20210118025551467.png" alt="image-20210118025551467" style="zoom: 67%;" />
+
+  ###### 참고) UML
+
+<img src="README.assets/image-20210118030737081.png" alt="image-20210118030737081" style="zoom:50%;" />
+
 - 상속을 하지 않는 경우 모든 클래스는 object를 상속 -> dir(인스턴스)에서 확인
 
 ```python
 class ChildClass명(ParentClass명):
     def __init__(self,초기값):
         super().__init__(상속받은거)		# 부모 클래스에서 상속받은거
+        # 다중상속인 경우
+        ParentClass명.__init__(상속받은거)	
         self.child = child			   # 자식 클래스에서 새로 초기화 하는거
         
     # Override(재정의)    
@@ -884,12 +994,6 @@ class ChildClass명(ParentClass명):
 
 
 
-##### UML
-
-
-
-
-
 #### 액세스
 
 - getter/setter
@@ -897,51 +1001,67 @@ class ChildClass명(ParentClass명):
 ```python
 @property
 
-
-@asdf.setter
+@property명.setter
 ```
 
-둘 다 인스턴스와 무관
+- 프라이빗 멤버변수
 
-@classmethod
+  변수 앞에 `__`를 붙여 외부에서 접근 불가능하게 만듦.
 
-첫번째 변수는 반드시 클래스 참조가 넘어감
+- 클래스 메서드 / 정적 메서드
 
-@staticmethod
+| 클래스 메서드                           | 정적 메서드     |
+| ----------------------------------------- | --------------- |
+| `@classmethod`                            | `@staticmethod` |
+| 모든 인스턴스가 공유 |  |
+| 인스턴스와 무관                                      |인스턴스와 무관|
+| 첫번째 변수는 반드시 클래스 참조가 넘어감 | 변수 없음       |
 
-변수 없음
+- 연산자 메서드
+- 그 외
+
+`__str__` : 단독으로 print 될 때(확인해야 할 멤버를 집어넣음)
+
+`__repr__` : 컬렉션에 담겨져있을 때(요약본을 출력)
+
+`__iter__`
 
 
 
-연산자 메서드
+---
 
 
 
-`__str__` 단독으로 print 될 때(확인해야 할 멤버를 집어넣음)
-
-`__repr__` 컬렉션에 담겨져있을 때(요약본을 출력)
-
-
-
-
-
-### 모듈과 패키지
+### 모듈과 패키지 [(실습파일)](https://github.com/hongjy127/TIL/blob/master/python/basic/lec16)
 
 #### 모듈
 
-`__name__`
+- `__name__`
 
+  모듈로 사용되지 않은 경우 `"__main__"`
 
+  모듈로  사용된 경우 파일명으로 지정
+
+- `sys.path`
+
+  현재 working directory에 있는 모듈이 가장 먼저 조사됨
+
+  그 다음 PYTHONPATH 검색 (config파일을 여기에 놓으면 언제든지 사용 가능함)
+
+- `sys.builtin_module_names`: 모듈 안에 있는거
+- `dir(module)`: 모듈 안에 함수 목록 (추가, 삭제 가능)
 
 
 
 #### 패키지
 
-모든 폴더에 `__init__.py` 필요
+모든 폴더에 `__init__.py` 필요 (내용 없음, 패키지로 쓴다는 것을 알려주기 위해)
 
 
 
-패키지 설치
+- 패키지 설치
+
+`$ pip install <module_name>`
 
 `$ pip install beautifulsoup4`
 
@@ -953,62 +1073,30 @@ class ChildClass명(ParentClass명):
 
 
 
-#### 가상환경
-
-격리된 독립적인 파이썬 환경을 만들어줌
-
-하나의 파이썬에는 한 라이브러리에 대해 하나의 버전만 설치 가능
-
---> 프로젝트마다 가상환경을 만들어주기
-
-conda 사용(터미널에서 진행)
-
-`$ conda env list` : 가상환경 리스트
-
-`$ conda create --name <가상환경 이름> python=<파이썬 버전>` : 새로운 가상환경 만들기
-
-`$ conda remove --name <가상환경 이름> python=<파이썬 버전>` : 새로운 가상환경 만들기
-
-`$ conda active <가상환경 이름>`
-
-`$ conda decative` : 현재 가상환경 벗어나기
+---
 
 
 
+### 고급문법 [(실습파일)](https://github.com/hongjy127/TIL/blob/master/python/basic/lec17)
+
+- `__iter__()`
+
+- generator
+
+  순회 가능 객체가 리턴, 함수가 끝나면 `StopIteration` 예외 발생
+
+```python
+def funcgen(seq):
+    
+    yield
+```
+
+- 데코레이터
+  - 일급시민: 함수 대입, 함수를 매개변수로 넘김, 함수를 리턴
+  - 지역함수
+  - 함수 데코레이터
 
 
-
-
-
-
-### 주의할 점들
-
-- 되도록 함수로 만들어서 사용
-- 함수는 단일책임의 원칙
-- 변수 만들 때 관례
-  - 변수명: 명사
-  - 함수명: 동사_목적어
-
-- hard coding  피하기 (전역변수는 최대한 피하기)
-  - input
-  - sys.argv
-  - config.ini
-
-- \ufeff - ms의 utf-8에 이게 항상 붙음
-
-
-
-기존 방법 : 절차 중심 --> Top down
-
-OOP: 객체 지향방법 --> bottom up
-
-- 객체 지향 설계 원칙
-
-  1) SRP(Single Responsibility Principle) 단일 책임의 원칙
-
-  2) OCP(Open Close Principle): 확장에는 열려 있고, 변화에는 닫혀있음을 의미(기능이 추가될 때 변경사항이 없음.)
-
-- 캡슐화(데이터 은닉), 추상화(상속), 다형성(오버라이드) 
 
 
 

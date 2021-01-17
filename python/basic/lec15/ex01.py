@@ -8,7 +8,7 @@ class Account:
     def inquire(self):
         print(f"잔액은 {self.balance}원 입니다.")
 
-account = Account(8000)
+account = Account(8000) # 인스턴스 생성 (메모리에 할당)
 account.deposit(1000)
 account.deposit(1000)
 account.inquire()

@@ -5,7 +5,7 @@
 # -> 모든 식별자는 자신의 값을 변경할 수 있음.
 
 # print(list((1,2,3)))    # list 식별자 --> 변환함수에 대한 식별자
-# list = [2,3,4]          # fltmxm dlstmxjstmdp eogks ckawhdp eogks tlrqufwk
+# list = [2,3,4]          # 리스트 인스턴스에 대한 참조에 대한 식별자
 # print(list((1,2,3)))
 
 
