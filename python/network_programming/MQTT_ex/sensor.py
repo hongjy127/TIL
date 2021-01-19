@@ -23,9 +23,9 @@ HOST = 'localhost'
 class Sensor(Thread):
     def __init__(self, interval, range, topic):
         super().__init__()
-        self.interval = interval
-        self.range = range
-        self.topic = topic
+        self.interval = interval    # 전송 간격
+        self.range = range          # 값의 범위 튜플
+        self.topic = topic          # 토픽
         self.client = mqtt.Client()
 
     def run(self):

@@ -1,11 +1,69 @@
-from sensor import Sensor
+from mqtt_sub import subscribe
+from datetime import datetime
+from app_base import Application
 
-sensors = [
-    Sensor(5, (3,10), 'iot/user1/temp'),
-    Sensor(7, (20,60), 'iot/user1/humi'),
-    Sensor(10, (20,80), 'iot/user1/illu'),
-    Sensor(12, (0,1), 'iot/user1/dust')
-]
+class MonitorApp(Application):
+    def __init__(self):
+        super().__init__()
+        subscribe('localhost', 'iot/#', self.on_message, forever=False)
+        self.sensors = {
+            'temp': [], # 평균을 구하기 위한 리스트
+            'humi': [],
+            'illu': [],
+            'dust': [],
+        }
 
-for sensor in sensors:
-    sensor.start()
+    def create_menu(self, menu):
+        menu.add('온도', self.print_temp)
+        menu.add('습도', self.print_humi)
+        menu.add('조도', self.print_illu)
+        menu.add('미세먼지', self.print_dust)
+        menu.add('종료', self.exit)
+
+    def on_message(self, client, userdata, msg):
+        with open(self.config.fname, 'at') as f:
+            value = float(msg.payload)
+            f.write(f'{datetime.now()},{msg.topic},{value}\n')
+            key = msg.topic.split('/')[-1]
+            self.sensors[key].append(value)
+
+    def get_avg(self, key):
+        total = sum(self.sensors[key])
+        avg = total/len(self.sensors[key])
+        return avg
+
+    def print_temp(self):
+        avg = self.get_avg('temp')
+        print('평균 온도: ', avg)
+
+    def print_humi(self):
+        avg = self.get_avg('humi')
+        print('평균 습도: ', avg)
+
+    def print_illu(self):
+        avg = self.get_avg('illu')
+        print('평균 조도: ', avg)
+
+    def print_dust(self):
+        avg = self.get_avg('dust')
+        print('평균 미세먼지: ', avg)
+
+if __name__ == "__main__":
+    app = MonitorApp()
+    app.run()
+
+
+
+
+
+        # self.load()
+
+
+
+    # def load(self):
+    #     with open(self.config.fname, 'rt') as f:
+    #         for line in f:
+    #             if(line.strip() == ''): continue
+    #             date, topic, value = line.split(',')
+    #             key = topic.split('/')[-1]
+    #             self.sensors[key].append(float(value))

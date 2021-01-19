@@ -33,6 +33,6 @@ print('server start')
 while True:
     print('wait')
     client_socket, addr = server_socket.accept()
-    start_new_thread(threaded, (client_socket, addr))
+    start_new_thread(threaded, (client_socket, addr))   # 내부적으로 thread 실행까지 해줌
 
 server_socket.close()
