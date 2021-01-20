@@ -27,7 +27,7 @@
 
 ### MariaDB
 
-- [mariaDB](https://github.com/hongjy127/TIL/blob/master/MariaDB/MariaDB.md)
+- [MariaDB](https://github.com/hongjy127/TIL/blob/master/MariaDB/MariaDB.md)
 
 
 
