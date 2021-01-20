@@ -1,0 +1,4 @@
+CREATE USER 'iot'@'%' IDENTIFIED BY '1234';
+
+GRANT ALL PRIVILEGES ON sqlDB.* TO 'iot'@'%';
+GRANT ALL PRIVILEGES ON employees.* TO 'iot'@'%';

@@ -42,6 +42,22 @@
 
 
 
+## 사용자 관리
+
+```mariadb
+-- 사용자 생성
+-- CREATE USER 'userid'@'허용되는 머신 IP' IDENTIFIED BY 'passwd';
+CREATE USER 'iot'@'%' IDENTIFIED BY '1234';
+
+-- 권한 부여
+-- GRANT ALL PRIVILEGES ON DB명.객체 TO 'userid'@'허용되는 머신 IP';
+-- *는 모든 객체를 말함, ``자동완성 조심
+GRANT ALL PRIVILEGES ON sqlDB.* TO 'iot'@'%';
+GRANT ALL PRIVILEGES ON employees.* TO 'iot'@'%';
+```
+
+
+
 ## MariaDB 기본 문법
 
 - CRUD: 데이터베이스 생성 -> 테이블 생성 -> 데이터 입력 -> 데이터 조회/활용
