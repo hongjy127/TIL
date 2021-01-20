@@ -7,7 +7,7 @@ class Configuration:
         config = self.load()
         self.fname = config['FNAME']
         self.encoding = config['ENCODING']
-
+    """
     def load(self):
         config = {}
         with open('config.ini','rt') as f:
@@ -16,6 +16,7 @@ class Configuration:
                 key, value = entry.split('=')
                 config[key.strip()] = value.strip()
         return config
+        """
 
     def __str__(self):
         return f'<Configuration fname {self.fname}, encoding {self.encoding}>'
@@ -41,7 +42,7 @@ class Menu:
 
     def select_menu(self):
         for idx, menu_item in enumerate(self.menu_items):
-            print(f'{idx}){menu_item.title}')
+            print(f'{idx}){menu_item.title}',end='')
         print()
         menu = int(input('입력: '))
         return menu
@@ -82,6 +83,6 @@ class Application:
 
     def exit(self):
         ans = input('종료할까요?(Y/N)')
-        if ans == 'Y':
+        if ans.upper() == 'Y':
             self.destroyed()
             sys.exit(0)
