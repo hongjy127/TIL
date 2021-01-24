@@ -8,47 +8,42 @@
 </head>
 
 <body>
-    <header>
-        <center>
-            <h2>&lt; 책갈피 기능 &gt;</h2>
-        </center>
-    </header>
-    <section>
-        <article>
-            <a href="#user">[이름]</a> &nbsp;
-            <a href="#addr">[주소]</a> &nbsp;
-            <a href="#tel">[전화번호]</a> &nbsp;
-            <a href="#foot">[참고]</a> &nbsp;
-            <p/>
-        </article>
-    </section>
-    <p>정보 영역</p>
-    ...생략
-    <p>정보 영역</p>
-    <p><a id="user">홍민성</a></p>
-    <a href="#top">[TOP]</a>
-    <p>정보 영역</p>
-    ...생략
-    <p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p>
-    <p>정보 영역</p>
-    <p><a id="addr">서울 강남구 신사동 291번지</a></p>
-    <a href="#top">[TOP]</a>
-    <p>정보 영역</p>
-    ...생략
-    <p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p>
-    <p>정보 영역</p>
-    <p id="tel">02-2323-0909</p>
-    <a href="#top">[TOP]</a>
-    <p>정보 영역</p>
-    ...생략
-    <p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p>
-    <p>정보 영역</p>
-    <p id="foot">참고</p>
-    <a href="#top">[TOP]</a>
-    <p>정보 영역</p>
-    ...생략
-    <p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p>
-    <p>정보 영역</p>
+    <!-- border는 셀 자체의 border -->
+    <table border="1" style="width:50%">
+        <tr>
+            <th>이름</th>
+            <th>점수</th>
+        </tr>
+        <tr>
+            <td>홍민성</td>
+            <td>90</td>
+        </tr>
+        <tr>
+            <td>최민수</td>
+            <td>80</td>
+            <td>80</td>
+        </tr>
+        <tr>
+            <td>심은경</td>
+            <td>70</td>
+        </tr>
+    </table>
+
+    <table border="1" style="width:50%">
+        <caption>행 통합 테이블</caption>
+        <tr>
+            <th>1행</th>
+            <td>1행 2열</td>
+        </tr>
+        <tr>
+            <th rowspan="2">2행</th>
+            <td>2행2열</td>
+        </tr>
+        <tr>
+            <td>3행2열</td>
+        </tr>
+    </table>
+
 </body>
 
 </html>

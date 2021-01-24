@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>GET 방식으로 데이터 전송</h2>
+    <form action="ex01-img.html" , method="get">
+        <!-- input으로 받은 정보를 action으로 보냄
+        ?name= ,major= 로 정보를 보냄 -> 주소로 정보 노출 -->
+        <p>이름 : <input type="text" name="name" , value="아무개"></p>
+        <p>전공 : <input type="text" name="major" , value="없음"></p>
+        <p></p>
+        <input type="submit" value="전송">
+        <input type="reset" value="다시작성">
+    </form>
+
+    <h2>POST 방식으로 데이터 전송</h2>
+    <!-- 정보가 숨겨짐 -->
+    <form action="ex01-img.html" , method="post">
+        <p>이름 : <input type="text" name="name" , value="아무개"></p>
+        <p>전공 : <input type="text" name="major" , value="없음"></p>
+        <p></p>
+        <input type="submit" value="전송">
+        <input type="reset" value="다시작성">
+    </form>
+
+    <h2>회원 인증 입력 양식</h2>
+    <form>
+        <p>ID : <input type="text" name="ID" size="15" required></p>
+        <!-- placeholder : 사용자가 입력한 문자를 보이지 않게 처리 -->
+        <p>PW : <input type="password" name="psw" size="15" placeholder="비밀번호" required></p>
+        <p></p>
+        <input type="submit" value="전송">
+        <input type="reset" value="다시작성">
+    </form>
+
+    <h2>텍스트 공간 입력 양식</h2>
+    <form>
+        <textarea rows="5" cols="50">텍스트를 작성하는 공간입니다.</textarea>
+        <p></p>
+        <input type="submit" value="전송">
+        <input type="reset" value="다시작성">
+    </form>
+
+    <form>
+        <fieldset>
+            <legend>개인 정보 입력</legend>
+            <p>이름 : <input type="text" name="name"></p>
+            <p>학교 : <input type="text" name="school"></p>
+            <input type="submit" value="제출">
+            <input type="reset" value="다시작성">
+        </fieldset>
+    </form>
+
+    <form>
+        <h3>당신의 성별은 무엇입니까?</h3>
+        <input type="radio" name="sex" value="male" checked>남자
+        <input type="radio" name="sex" value="female">여자
+        <p></p>
+        <h3>당신은 몇 학년입니까?</h3>
+        <input type="radio" name="year" value="1" checked>1학년
+        <input type="radio" name="year" value="2">2학년
+        <input type="radio" name="year" value="3">3학년
+        <input type="radio" name="year" value="4">4학년
+        <p></p>
+        <input type="submit" value="제출">
+        <input type="reset" value="다시작성">
+    </form>
+
+    <form>
+        <!-- 빈 문자열이 넘어감 -->
+        이름: <input type="text" name="name">
+        <h3>당신의 성별은 무엇입니까?</h3>
+        <input type="radio" name="sex" value="male" checked>남자
+        <input type="radio" name="sex" value="female">여자
+        <p></p>
+        <h3>당신은 몇 학년입니까?</h3>
+        <!-- 라디오같은건 체크 안하면 아얘 정보가 안넘어감 -->
+        <input type="radio" name="year" value="1">1학년
+        <input type="radio" name="year" value="2">2학년
+        <!-- 3학년을 클릭해도 반응하게 됨 -->
+        <input type="radio" id="third" name="year" value="3"><label for="third">3학년</label>
+        <!-- 귀찮으니깐 아얘 라벨로 묶어버림 -->
+        <label><input type="radio" name="year" value="4">4학년</label>
+        <p></p>
+        <input type="submit" value="제출">
+        <input type="reset" value="다시작성">
+    </form>
+
+    <form>
+        <!-- value가 리스트로 저장됨 -->
+        <h3>현재 관심을 가지고 있는 학습 주제는 무엇입니까?</h3>
+        <input type="checkbox" name="subject" value="HTML5" checked>HTML5 <br>
+        <input type="checkbox" name="subject" value="CSS3">CSS3 <br>
+        <input type="checkbox" name="subject" value="Javascript">Javascript <br>
+        <input type="checkbox" name="subject" value="Jquery">Jquery
+        <p></p>
+        <input type="submit" value="제출">
+        <input type="reset" value="다시작성">
+    </form>
+
+    <form>
+        <!-- 알아만 두기 -->
+        <h3>Button 태그 사용</h3>
+        <!-- 자바스크립트 -->
+        <button type="button" onclick="alert('클릭-1 사용')">클릭-1</button>
+        <h3>Input 태그 사용</h3>
+        <input type="button" onclick="alert('클릭-2 사용')" value="클릭-2">
+        <h3>Image 버튼 사용</h3>
+        <!-- 이미지 버튼을 만들때 -->
+        <button type="button" onclick="alert('클릭-3 사용')">
+            <img src="button.jpg"></button>
+    </form>
+
+    <h3>관심 있는 학습 주제 한 가지를 선택하세요.</h3>
+    <form>
+        <select name="subjects">
+            <option value="1" selected>HTML5</option>
+            <option value="2">CSS3</option>
+            <option value="3">Javascript</option>
+            <option value="4">Jquery</option>
+        </select>
+        <p></p>
+        <input type="submit" value="제출">
+        <input type="reset" value="다시작성">
+    </form>
+
+    <h3>관심 있는 학습 주제 한 가지를 선택하세요.</h3>
+    <form>
+        <select name="subjects" size="4" multiple>
+            <option value="1" selected>HTML5</option>
+            <option value="2">CSS3</option>
+            <option value="3">Javascript</option>
+            <option value="4">Jquery</option>
+        </select>
+        <p></p>
+        <input type="submit" value="제출">
+        <input type="reset" value="다시작성">
+    </form>
+
+    <form>
+        <h3>0~100 범위에서 원하는 지점을 선택하세요.</h3>
+        <input type="range" name="point" min="0" max="100">
+        <p></p>
+        <input type="submit" value="완료">
+        <input type="reset" value="초기화">
+    </form>
+
+</body>
+
+</html>
