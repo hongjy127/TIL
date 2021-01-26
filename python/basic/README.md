@@ -19,12 +19,14 @@
 ### vscode - python 설정
 
 - 확장>Korean Language Pack, Python, Code Runner 설치
-- 확장>pylance(변수 한번에 바꾸기)
+- 확장>pylance(변수 한번에 바꾸기), material icon theme(파일아이콘)
 - 관리>설정>Code-runner:Run In Terminal에 체크
 
-#### 단축키
+#### 단축키 (vscode)
 
 `ctrl + /` : 주석
+
+`Ctrl+K+F` : 들여쓰기 단축키
 
 
 
@@ -1014,8 +1016,10 @@ class ChildClass명(ParentClass명):
 | ----------------------------------------- | --------------- |
 | `@classmethod`                            | `@staticmethod` |
 | 모든 인스턴스가 공유 |  |
-| 인스턴스와 무관                                      |인스턴스와 무관|
+| 인스턴스와 무관                            |인스턴스와 무관|
 | 첫번째 변수는 반드시 클래스 참조가 넘어감 | 변수 없음       |
+
+  클래스 변수
 
 - 연산자 메서드
 - 그 외
