@@ -3,9 +3,6 @@
 [TOC]
 
 ## 정렬
-
-
-
 ### 가장 큰 수
 
 - [문제](https://programmers.co.kr/learn/courses/30/lessons/42746?language=python3)
@@ -14,13 +11,7 @@
 
 
 
-
-
-
-# 해시
-
-
-
+## 해시
 ### 위장
 
 - [문제](https://programmers.co.kr/learn/courses/30/lessons/42578)
