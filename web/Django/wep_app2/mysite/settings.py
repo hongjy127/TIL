@@ -38,6 +38,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    'taggit.apps.TaggitAppConfig',
+    'taggit_templatetags2',
+    'widget_tweaks',
+    'tinymce',
+
     'bookmark.apps.BookmarkConfig',
     'blog.apps.BlogConfig',
 ]
@@ -57,7 +63,9 @@ ROOT_URLCONF = 'mysite.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            os.path.join(BASE_DIR, 'templates')
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -90,7 +98,7 @@ DATABASES = {
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
-
+# 비밀번호 설정 (간단한거, 숫자로만 등등)
 AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
@@ -118,7 +126,7 @@ USE_I18N = True
 
 USE_L10N = True
 
-USE_TZ = True
+USE_TZ = False
 
 
 # Static files (CSS, JavaScript, Images)
@@ -128,4 +136,12 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 
 MEDIA_URL = '/media/'
-MEDIA_ROT = os.path.join(BASE_DIR, 'media')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+# 로그인 관련 URL 디폴트 값 (원래는 이렇게 함)
+# LOGIN_URL = '/accounts/login/' # 로그인 페이지 URL
+# LOGIN_REDIRECT_URL = '/accounts/profile' # 로그인 성공시 리다이렉트할 URL
+# LOGOUT_REDIRECT_URL = '/' # 로그 아웃시 리다이렉트할 URL
+
+LOGOUT_REDIRECT_URL = '/' # 로그 아웃시 리다이렉트할 URL
+LOGIN_REDIRECT_URL = '/' # 로그인 성공시 리다이렉트할 URL

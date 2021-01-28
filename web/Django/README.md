@@ -85,6 +85,10 @@ MariaDB 사용 시
   # 앱 등록
   INSTALLED_APPS = [
   	'앱이름'
+      
+      # 기본 앱
+      # third party app
+      # 내가 만든 앱 순서로 넣음
   ]
   
   # 템플릿 설정
@@ -168,6 +172,14 @@ MariaDB 사용 시
    모델을 기반으로 해서 데이터베이스의 테이블 만들어줌 (실제 db 반영)
    $ python manage.py migrate
    ```
+
+   ```
+   migrations history 삭제
+   $ python manage.py migrate --fake 앱이름 zero
+   혹은 migrations 파일에서 __init__.py 제외하고 삭제
+   ```
+
+   
 
 2. URLconf - urls.py : URL과 view 관계
 
@@ -318,6 +330,16 @@ class 모델명Admin(admin.ModelAdmin):
       model = Bookmark
       # object_list : ListView에서 넘겨주는 context 변수
       # 템플릿 경로: 앱이름/templates/앱이름/모델명_list.html
+      # 바꿀거 추가
+      
+      # 굉장히 자주 사용
+      def get_queryset(self):
+          return
+      
+      def get_context_data(self, **kwargs):
+          context = super.get_context_data(**kwargs)
+          context['model_list'] = ['모델클래스']
+          return context
   
   class 모델명(DetailView):
       model = Bookmark   
@@ -331,7 +353,13 @@ class 모델명Admin(admin.ModelAdmin):
 - ListView : 목록 보기
 - DetailView : 한 개 상세보기
 
-
+- ArchiveView : 날짜별로 필터링
+  - ArchiveIndexView, YearArchiveView, MonthArchiveView, DayArchiveView, TodayArchiveView 
+- Tag
+- FormView
+  - def form_valid(self, form) : 유효성 검사에 성공한 경우 메서드 호출
+- CreateView
+  - FormView
 
 
 
@@ -444,6 +472,10 @@ insert, update, delete는 항상 redirect 해주기
 - {% with %}
   - 객체 안에 객체를 쓸 때
   - 대입문, as 모두 사용 가능
+  
+- {% load %}
+
+  
 
 
 
@@ -465,7 +497,23 @@ insert, update, delete는 항상 redirect 해주기
 
 
 
+태깅지원
 
+pip install django-taggit django-taggit-templatetags2
+
+
+
+pip install django-widget-tweaks
+
+pip install django-tinymce
+
+https://www.tiny.cloud/
+
+
+
+settings.py
+
+'taggit.apps.TaggitAppConfig', 'taggit_templatetags2',
 
 
 
