@@ -276,7 +276,7 @@ INSERT INTO 테이블명[(
     column1,
     column2,
 	...)]
-VALUES (value1, value2, ...)
+VALUES ('value1', 'value2', ...)
 
 -- 대량의 데이터를 넣을 때
 INSERT INTO 테이블명[(
@@ -292,7 +292,7 @@ SELECT문;
 
 ```mariadb
 UPDATE 테이블명
-SET column1=value1, column2=value2, ...
+SET column1='value1', column2='value2', ...
 [WHERE 조건];	-- 없으면 전체 행 수정
 ```
 
@@ -301,7 +301,7 @@ SET column1=value1, column2=value2, ...
 #### DELETE
 
 ```mariadb
-UPDATE FROM 테이블명
+DELETE FROM 테이블명
 [WHERE 조건];	-- 없으면 전체 행 삭제
 ```
 
