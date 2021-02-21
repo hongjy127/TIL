@@ -58,6 +58,21 @@ GRANT ALL PRIVILEGES ON employees.* TO 'iot'@'%';
 
 
 
+- 데이터베이스 복사
+
+ ```
+-- 복사
+mysqldump -u[root] -p[****] db_name > db_name.sql
+
+-- 다운
+db_name.sql 폴더에서
+mysql -u root -p db_name < db_name.sql
+ ```
+
+
+
+
+
 ## MariaDB 기본 문법
 
 - CRUD: 데이터베이스 생성 -> 테이블 생성 -> 데이터 입력 -> 데이터 조회/활용

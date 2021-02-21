@@ -5,7 +5,7 @@ from dao import AddressBookDao
 class AddrBookApp(Application):
     def __init__(self):
         super().__init__()
-        print(self.config)
+        # print(self.config)
         self.db = MySQLdb.connect(db=self.config['db'],
                                  host=self.config['host'],
                                  user=self.config['user'],
@@ -63,17 +63,41 @@ class AddrBookApp(Application):
             print(f'{e.num:8d} {e.name:20s} {e.phone:16s} {e.email:20s} {e.addr}')
         print('-'*75)
 
+    # 수행평가
     def add(self):
         # create
-        pass
+        print('새 주소록 항목 추가')
+        name = input('이름:')
+        phone = input('전화번호:')
+        email = input('이메일:')
+        addr = input('주소:')
+        self.addressbook_dao.add(name, phone, email, addr)
 
     def update(self):
         # update
-        pass
+        num = int(input('수정할 번호:'))
+        row = self.addressbook_dao.get(num)
+        name = input(f'이름({row.name}):')
+        if name.strip() == '':
+            name = row.name
+        phone = input(f'전화번호({row.phone}):')
+        if phone.strip() == '':
+            phone = row.phone
+        email = input(f'이메일({row.email}):')
+        if email.strip() == '':
+            email = row.email
+        addr = input(f'주소({row.addr}):')
+        if addr.strip() == '':
+            addr = row.addr
+        self.addressbook_dao.update(num, name, phone, email, addr)
 
     def delete(self):
         # delete
-        pass
+        num = int(input('삭제할 번호:'))
+        row = self.addressbook_dao.get(num)
+        ans = input(f'{row.name}을 삭제할까요?(Y/N)')
+        if ans.upper() == 'Y':
+            self.addressbook_dao.delete(num)
 
     def destroyed(self):
         self.cursor.close()

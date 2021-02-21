@@ -107,6 +107,7 @@ MariaDB 사용 시
       'ENGINE': 'django.db.backends.sqlite3'
       
       # MariaDB 사용
+      # Heidi에서 db 추가해주기
       'ENGINE': 'django.db.backends.mysql',
       'NAME': '데이터베이스명',
       'HOST': 'localhost',
@@ -351,8 +352,12 @@ class 모델명Admin(admin.ModelAdmin):
 
 - TemplateView : 뷰 템플릿을 직접 제어할 때
 - ListView : 목록 보기
+  - 테이블에 들어있는 모든 레코드를 가져와 구성하는 경우 테이블명(모델 클래스명)만 지정해주면 됨.
+  - context 변수 = object_list
+  - 템플릿 파일 = 모델명소문자_list.html
 - DetailView : 한 개 상세보기
-
+  - context 변수 = object
+  - 템플릿 파일 = 모델명소문자_detail.html
 - ArchiveView : 날짜별로 필터링
   - ArchiveIndexView, YearArchiveView, MonthArchiveView, DayArchiveView, TodayArchiveView 
 - Tag
@@ -466,7 +471,10 @@ insert, update, delete는 항상 redirect 해주기
 - {% url %}
 
   - 하드코딩 방지
-  - `{% url '네임스페이스:뷰이름' [파라미터] %}`
+  - `{% url 'namespace:view_name' [arg1 arg2] %}`
+    - namespace: urls.py의 app_name에 정의한 이름
+    - view_name: urls.py에서 정의한 URL 패턴 이름(name='view_name')
+    - argN: 뷰함수에서 사용하는 인자
   - 파이썬 코드(뷰 함수 내)에서는 reverse()와 같은 역할
 
 - {% with %}
@@ -505,7 +513,13 @@ pip install django-taggit django-taggit-templatetags2
 
 pip install django-widget-tweaks
 
+'widget_tweaks',
+
+
+
 pip install django-tinymce
+
+'tinymice'
 
 https://www.tiny.cloud/
 

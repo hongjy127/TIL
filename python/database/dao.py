@@ -53,11 +53,15 @@ class AddressBookDao:
         rows = self.cursor.fetchall()
         return (AddressBookEntry(*row) for row in rows)
 
-    def add(self):
-        pass
+    # 수행평가
+    def add(self, name, phone, email, addr):
+        query = f"INSERT INTO addressbook (name, phone, email, addr) VALUES ('{name}', '{phone}', '{email}', '{addr}')"
+        self.cursor.execute(query)
 
-    def update(self):
-        pass
+    def update(self, num, name, phone, email, addr):
+        query = f"UPDATE addressbook SET name='{name}', phone='{phone}', email='{email}', addr='{addr}' WHERE num='{num}'"
+        self.cursor.execute(query)
 
-    def delete(self):
-        pass
+    def delete(self, num):
+        query = f"DELETE FROM addressbook WHERE num='{num}'"
+        self.cursor.execute(query)
