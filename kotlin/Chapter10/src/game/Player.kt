@@ -1,3 +1,5 @@
+package game
+
 class Player {
     var name = "nadrigal"   // 멤버변수는 반드시 초기화
         get() = field.capitalize()
