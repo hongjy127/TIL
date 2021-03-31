@@ -42,9 +42,9 @@
 
 `$ conda remove --name <가상환경 이름> --all` : 가상환경 삭제
 
-`$ conda active <가상환경 이름>`
+`$ conda activate <가상환경 이름>`
 
-`$ conda decative` : 현재 가상환경 벗어나기
+`$ conda deactivate` : 현재 가상환경 벗어나기
 
 - 동일한 패키지 설치하기
 

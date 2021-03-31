@@ -30,7 +30,7 @@
 
 ```python
 import threading
-from threading import Thread	# 주로 사용
+# from threading import Thread	# 주로 사용
 
 t = threading.Thread(target=func, args=(,))	# args는 tuple
 t.start()	# 반드시 실행해줘야함
@@ -60,13 +60,14 @@ t.start()
 
 - Thread class 동기화
 
-  ```python
-  from threading import Lock
+```python
+from threading import Lock
 
-  Lock().acquire()	# 한 스레드만 락을 소유, 나머지는 대기
+Lock().acquire()	# 한 스레드만 락을 소유, 나머지는 대기
 Lock().release()	# 락 해제
-  ```
-  
+```
+
+
 
 공유자원: 싱글 스레드끼리 공유하는 거
 
@@ -219,11 +220,11 @@ dic2 = json.loads(msg) 	# 문자열 --> 사전 객체로 복원
 
 ## Eclipse Mosquitto 설치
 
-Eclipse Mosquitto 설치 > 서비스 > Mosquitto Broker > 시작
+[Eclipse Mosquitto](https://mosquitto.org/) 설치 > 서비스 > Mosquitto Broker > 시작
 
-방화벽 > 인바운드 > 새규칙 > 프로그램 > mosquitto.exe
+고급보안이 포함된 방화벽 > 인바운드 > 새규칙 > 프로그램 > mosquitto.exe > 이름은 아무거나
 
-고급설정 > 환경변수 > 시스템변수의 path > mosquitto 경로 추가
+고급설정 > 환경변수 > 시스템변수의 path > mosquitto 경로 추가(C:\Program Files\Mosquitto)
 
 
 
