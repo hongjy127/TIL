@@ -4,7 +4,8 @@ import cv2
 # cap = cv2.VideoCapture(1) # 1번 카메라
 # cap = cv2.VideoCapture('http://172.30.1.49:4747/video')   # ip 카메라
 # cap = cv2.VideoCapture('http://172.30.1.26:4747/video')
-cap = cv2.VideoCapture('data/vtest.avi')  # 동영상 파일
+cap = cv2.VideoCapture('http://hongpi:8000/mjpeg/stream')
+# cap = cv2.VideoCapture('data/vtest.avi')  # 동영상 파일
 
 # cap.set(cv2.CAP_PROP_FRAME_WIDTH, 320)
 # cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 240)
