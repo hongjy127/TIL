@@ -4,6 +4,8 @@
 
 /image.pptx
 /cmdmenu.reg
+/python/raspberrypi/objectdetection-ex/protoc-3.1.0-win32
+/python/raspberrypi/objectdetection-ex/tf/models
 
 ### C++ ###
 # Prerequisites
