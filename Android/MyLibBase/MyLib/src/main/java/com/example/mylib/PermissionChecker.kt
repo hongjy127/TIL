@@ -1,6 +1,5 @@
-package com.example.electframe
+package com.example.mylib
 
-import android.app.Activity
 import android.content.pm.PackageManager
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat

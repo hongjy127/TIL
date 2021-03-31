@@ -1,4 +1,4 @@
-package com.example.imagesearch.data.kakaoimage
+package com.example.mylib.openapi.kakao.image.data
 
 data class Meta(
     val is_end: Boolean,

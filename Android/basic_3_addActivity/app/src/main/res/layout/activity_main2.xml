@@ -6,4 +6,11 @@
     android:layout_height="match_parent"
     tools:context=".Main2Activity">
 
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Activity"
+        android:textColor="#FF9800"
+        android:textSize="30sp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
