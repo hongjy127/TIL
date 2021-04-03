@@ -35,7 +35,7 @@ psk="패스워드"
 
 **putty 접속**
 
-IP address, Saved Sessions
+IP address(접속할 서버 IP-라즈베리파이), Saved Sessions
 
 (window10에서는 cmd창에서 접속 가능)
 
@@ -114,7 +114,7 @@ $ sudo nano /etc/samba/smb.conf
 $ sudo service smbd restart
 ```
 
-\\\IP주소 > 네트워크 드라이브 연결
+\\\라즈베리파이 IP주소 > id, pw > 네트워크 드라이브 연결
 
 
 

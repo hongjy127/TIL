@@ -46,7 +46,7 @@ pip install opencv-python
 
 Haar Cascade
 
-C:\Users\hongj\Anaconda3\envs\iot-ex\Lib\site-packages\cv2\data
+C:\Users\hongj\Anaconda3\envs\iot\Lib\site-packages\cv2\data
 
 
 
