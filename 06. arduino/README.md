@@ -2,75 +2,73 @@
 
 
 
+## 설치 / 환경설정
+
 [Arduino - Home](https://www.arduino.cc/)
 
 
 
-C:\Program Files (x86)\Arduino
+- arduino_debug.14j.ini
 
-arduino_debug.14j.ini 에
+  C:\Program Files (x86)\Arduino
 
--DDEBUG=false 추가
+  arduino_debug.14j.ini 에
 
-(-Xms128M
+  -DDEBUG=false 추가
 
--Xmx512M
+  (-Xms128M
 
--Dfile.encoding=UTF8
+  -Xmx512M
 
--Djava.net.preferIPv4Stack=true
+  -Dfile.encoding=UTF8
 
--DDEBUG=false)
+  -Djava.net.preferIPv4Stack=true
 
+  -DDEBUG=false)
 
+  
 
-툴>보드>
+- 보드, 포트 설정
 
-툴>포트>
+  툴>보드>
 
+  툴>포트>
 
+  
 
-C:\Users\hongj\Documents\Arduino 에 저장됨
+- 주의사항
 
-하드웨어 변경시 usb 포트 꼭 분리
+  C:\Users\hongj\Documents\Arduino 에 저장됨
 
-소프트웨어 변경 시 연결되어도 가능
+  하드웨어 변경시 usb 포트 꼭 분리
 
-컴파일 > 업로드
+  소프트웨어 변경 시 연결되어도 가능
 
-업로드에는 컴파일 포함, 에러가 나는걸 확인하기 위해 컴파일 먼저
+  컴파일 > 업로드 : 업로드에는 컴파일 포함, 에러가 나는걸 확인하기 위해 컴파일 먼저
 
+  
 
+- vscode
 
-vscode > 확장팩 > Arduino
+  vscode > 확장팩 > Arduino
 
-프로젝트 만들기
+  프로젝트 만들기
 
-F1>arduino:initialize
+  F1>arduino:initialize
 
-시리얼포트 정해주기
+  시리얼포트 정해주기
 
-
-
-한 디렉토리에는 .ino 파일 하나만 존재해야함
-
-
-
-arduino.json 에서 sketch 변경 -> 내가 컴파일할 작업
-
-연습때마다 프로젝트를 하나씩 만들어 줄 수 없기 때문에
+  한 디렉토리에는 .ino 파일 하나만 존재해야함 -> arduino.json 에서 sketch 변경 -> 내가 컴파일할 작업(연습때마다 프로젝트를 하나씩 만들어 줄 수 없기 때문에)
 
 
 
-아두이노에서 추가할 때는 새탭
+## 문법
 
 
 
 \# include <Arduino.h>
 
 상수 정의 (OUTPUT, HIGH 등)
-
-
 
 
 

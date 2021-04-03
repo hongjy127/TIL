@@ -1,6 +1,6 @@
 // 아두이노에서는 전역변수를 사용함
 const int pd_led_pin = 11;  // pull down
-const int pu_led_pin = 10;  // pull up
+const int pu_led_pin = 7;  // pull up
 
 void setup() {
   // put your setup code here, to run once:
