@@ -390,6 +390,52 @@ $ sudo apt update	// 혹시 업데이트 될까봐
 $ sudo apt install python3-gpiozero
 ```
 
+- 서보모터 지터링 방지
+
+```
+1. 라이브러리 설치
+
+$ wget https://github.com/joan2937/pigpio/archive/master.zip
+$ unzip master.zip
+$ cd pigpio-master
+$ make
+$ sudo make install
+
+2. 운영
+
+사용전 서버 데몬 기동 필요
+$ sudo pigpiod
+
+정지
+$ sudo killall pigpiod
+
+
+3. 프로그램
+import pigpio
+
+SERVO = 21 
+pi = pigpio.pi() 
+
+pi.set_servo_pulsewidth(SERVO, 500)    # 서보모터 0도
+pi.set_servo_pulsewidth(SERVO, 1500)     # 서보모터 90도
+pi.set_servo_pulsewidth(SERVO, 2500)    # 서보모터 180도
+
+cf) 각도를 입력으로 하는 경우
+
+서보모터의 전체 각도를 다 사용하는 경우
+
+f`(x) = 500+ 11.11x     --> 모터에 무리를 줄 수 있음
+
+f`(x) = 600+ 10x    --> 약간의 여분을 주는 경우
+
+-90 ~ 90도 각도 값으로 제어하는 경우 
+
+pulse_width = 500 + 11.11*(value+90)
+pi.set_servo_pulsewidth(SERVO, pulse_width)
+```
+
+
+
 
 
 ---
