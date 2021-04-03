@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block title %}post_all.html{% endblock %}
+
+{% block content %}
+<h1>Blog List</h1>
+<br>
+{% for post in posts %}
+<h3><a href="{{post.get_absolute_url}}">{{post.title}}</a></h3>
+{{post.modify_dt|date:"Y-m-d"}}
+<p>{{post.description}}</p>
+{% endfor %}
+<br>
+<div>
+    <span>
+        {% if page_obj.has_previous %}
+        <a href="?page={{page_obj.previous_page_number}}">Prev</a>
+        {% endif %}
+
+        Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}
+
+        {% if page_obj.has_next %}
+        <a href="?page={{page_obj.next_page_number}}">Next</a>
+        {% endif %}
+    </span>
+</div>
+<br>
+{% include "pagination.html" %}
+
+{% if user.is_active %}
+    <div class="text-right mr-3">
+        <a href="{%url 'blog:add' %}" class="btn btn-primary btn-sm">
+            <i class="fas fa-pencil-alt"></i> 쓰기</a>
+    </div>
+{% endif %}
+
+{% endblock %}

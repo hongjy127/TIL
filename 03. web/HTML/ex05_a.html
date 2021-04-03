@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <header>
+        <center>
+            <h2>&lt; 하이퍼링크 관련 태그 &gt;</h2>
+        </center>
+    </header>
+    <section>
+        <article>
+            <a href="http://www.w3.org" target="_blank">W3C 사이트(blank window)</a><p/>
+            <a href="http://www.w3.org" target="_self">W3C 사이트(self window)</a><p/>
+
+            <a href="ex01-img.html">ex01-img.html</a> <br>
+            
+            <!-- 웹서버가 서비스하는 최상위 디렉토리를 말하기 때문에 절대경로가 가능함
+            라이브 서버는 파일 연 곳이 최상위 디렉토리라 가능 -->
+            <a href="/ex01-img.html">ex01-img.html</a> <br>
+            <!-- 얘도 절대경로 -->
+            <a href="http://localhost:5500/ex01-img.html">ex01-img.html</a> <br>
+
+            <!-- #:pass, 아직 링크가 없을때
+            <a href="#">sub_ex1.html</a> -->
+            <a href="sub1\sub_ex1.html">sub_ex1.html</a> <br>
+
+            <!-- 이미지 클릭 시 링크로 이동 -->
+            <a href="ex01-img.html">
+                <img src="profileImage.png" width="500" height="500"/> 홍이의 곱슐랭
+            </a> <br>
+
+            <!-- 링크를 눌렀을 때 ex08.html의 전화번호부분으로 가게 만들기 -->
+            <a href="ex06.html#tel">
+                ex06.html의 전화번호부분
+            </a> <br>
+
+        </article>
+    </section>
+</body>
+
+</html>
