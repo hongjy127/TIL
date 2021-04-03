@@ -46,7 +46,7 @@
 
 - [C++](https://github.com/hongjy127/TIL/tree/master/C%2B%2B)
 
-- [arduino](https://github.com/hongjy127/TIL/tree/master/C%2B%2B)
+- [arduino](https://github.com/hongjy127/TIL/tree/master/arduino)
 
 
 

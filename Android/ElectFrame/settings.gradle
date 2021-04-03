@@ -1,3 +1,0 @@
-include ':app', ':MyLib'
-rootProject.name = "ElectFrame"
-project(':MyLib').projectDir = new File('C:\\Users\\hongj\\TIL\\Android\\MyLibBase\\MyLib')

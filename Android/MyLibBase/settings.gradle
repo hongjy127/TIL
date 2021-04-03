@@ -1,3 +1,0 @@
-include ':MyLib'
-include ':app'
-rootProject.name = "MyLibBase"
