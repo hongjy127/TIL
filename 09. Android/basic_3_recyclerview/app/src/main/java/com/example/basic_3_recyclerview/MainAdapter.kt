@@ -16,7 +16,7 @@ class MainAdapter(val items: List<MainData>, val onItemClick: (Int)->Unit): Recy
         return MainViewHolder(view)
     }
 
-    // 데이터의 개수 리턴턴
+    // 데이터의 개수 리턴
    override fun getItemCount() = items.size
 
     override fun onBindViewHolder(holder: MainViewHolder, position: Int) {

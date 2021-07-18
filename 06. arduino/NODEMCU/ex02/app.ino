@@ -14,8 +14,8 @@ void check() {
     double temp = dht11.readTemperature();
     double humi = dht11.readHumidity();
 
-    com.print_d(0, "Temp.: ", temp);
-    com.print_d(1, "Humi.: ", humi);
+    com.print_d(0, "Temp.: ", temp, true);
+    com.print_d(1, "Humi.: ", humi, true);
 }
 
 void setup() {

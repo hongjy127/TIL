@@ -4,7 +4,7 @@
 void receive(String msg);
 
 Robot car(8,7,9,5,4,3);
-BtMiniCom com(10, 11, receive);
+BtMiniCom com(2, 3, receive);
 
 // 블루투스 수신 메세지 처리 함수
 void receive(String msg) {

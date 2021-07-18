@@ -443,9 +443,3 @@ pi.set_servo_pulsewidth(SERVO, pulse_width)
 라즈베리파이는 제어가 메인이 아님. 제어는 아두이노에서
 
 라즈베리파이는 영상과 오디오 처리 위주
-
-
-
-NumPy
-
-OpenCV

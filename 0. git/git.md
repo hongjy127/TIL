@@ -148,6 +148,8 @@ git은 바뀐 내용만 저장
 
 ### github에 올리기
 
+(github에서 repo 먼저 만들어줌)
+
 `$ git remote add <remote_name> <URL>` : URL을 remote_name(주로 origin)으로 등록 (한 번만 등록)
 
 `$ git remote -v` : 모든 저장소 보여주기

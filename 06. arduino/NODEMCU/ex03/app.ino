@@ -2,8 +2,10 @@
 #include <MiniCom.h>
 
 // 5G 지원 x
-const char *ssid = "KT_GiGA_2G_Wave2_05BE";
-const char *password = "hf52ch1863";
+// const char *ssid = "KT_GiGA_2G_Wave2_05BE";
+// const char *password = "hf52ch1863";
+const char *ssid = "TECH2_2G";
+const char *password = "tech21234!";
 
 MiniCom com(115200);
 
@@ -12,7 +14,7 @@ void wifi_connect() {
     WiFi.begin(ssid, password);
     while(WiFi.status() != WL_CONNECTED ) {
         delay(500);
-        Serial.print(".");
+        Serial.println(".");
     }
     com.print(0, "WiFi connected", true);
     IPAddress ip = WiFi.localIP();

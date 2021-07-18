@@ -3,7 +3,7 @@ import json
 import cv2
 import numpy as np
 
-HOST = '172.30.1.35'    # 내 pc의 주소
+HOST = '172.30.1.39'    # 내 pc의 주소
 PORT = 5000
 counter = 0
 

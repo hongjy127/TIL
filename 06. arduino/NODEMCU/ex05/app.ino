@@ -5,7 +5,9 @@
 // 5G 지원 x
 const char *ssid = "KT_GiGA_2G_Wave2_05BE";
 const char *password = "hf52ch1863";
-const char *mqtt_server = "172.30.1.35";
+// const char *ssid = "TECH2_2G";
+// const char *password = "tech21234!";
+const char *mqtt_server = "172.30.1.39";
 
 MiniCom com(115200);
 WiFiClient espClient;

@@ -6,7 +6,7 @@
 
 [IntelliJ IDEA](https://www.jetbrains.com/)
 
-- openJDK 설치(한글 경로 있으면 안됨)
+- new project > openJDK 설치(한글 경로 있으면 안됨)
 - Kotlin 컴파일러 다운로드(Kotlin/JVM)
 
 
@@ -132,4 +132,3 @@ val 변수명: (매개변수 목록) -> 리턴타입 = 익명함수(또는 함�
 
 
 
-https://developer.android.com/studio

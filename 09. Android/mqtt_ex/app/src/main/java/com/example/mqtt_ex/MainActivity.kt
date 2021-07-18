@@ -10,7 +10,7 @@ import org.eclipse.paho.client.mqttv3.MqttMessage
 
 const val SUB_TOPIC = "iot/monitor/#"
 const val PUB_TOPIC = "iot/led"
-const val SERVER_URI = "tcp://172.30.1.35:1883" // broker: pc
+const val SERVER_URI = "tcp://172.30.1.39:1883" // broker: pc
 
 class MainActivity : AppCompatActivity() {
     val TAG = "MqttActivity"

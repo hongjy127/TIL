@@ -222,6 +222,13 @@ dic2 = json.loads(msg) 	# 문자열 --> 사전 객체로 복원
 
 [Eclipse Mosquitto](https://mosquitto.org/) 설치 > 서비스 > Mosquitto Broker > 시작
 
+C:\Program Files\Mosquitto\mosquitto.conf > 아래 두 줄 추가
+
+```
+bind_address 0.0.0.0
+allow_anonymous true
+```
+
 고급보안이 포함된 방화벽 > 인바운드 > 새규칙 > 프로그램 > mosquitto.exe > 이름은 아무거나
 
 고급설정 > 환경변수 > 시스템변수의 path > mosquitto 경로 추가(C:\Program Files\Mosquitto)
@@ -229,6 +236,7 @@ dic2 = json.loads(msg) 	# 문자열 --> 사전 객체로 복원
 
 
 ```
+-v: 토픽 구독
 -h: host
 -t: topic
 -m: message
@@ -237,9 +245,11 @@ ex) home/#
 +: 한 레벨만 포함
 ex) home/+/temp1
 
-mosquitto -pub -h localhost -t home/temp -m 12
 
-mosquitto -sub -h localhost -t home/temp
+// cmd
+mosquitto_pub -h localhost -t home/temp -m 12
+
+mosquitto_sub -v -h localhost -t home/temp
 ```
 
 

@@ -47,6 +47,7 @@ void loop() {
     client.flush();
 
     // Return the response
+    // http://172.30.1.4/(localIP)
     client.println("HTTP/1.1 200 OK");
     client.println("Content-Type: text/html");  // 응답 header
     client.println(""); // 헤더와 body 구분 역할

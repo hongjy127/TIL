@@ -16,14 +16,14 @@ int timer_id = -1;
 void check() {
     if(!state) {
         timer_id = com.setInterval(500, [](){
-            com.print(0, "Blink mode");
+            com.print(0, "Blink mode", true);
             led.toggle();
         });
         state = true;
     } else {
         led.off();
         state = false;
-        com.print(0, "Off mode");
+        com.print(0, "Off mode", true);
         // 타이머를 꺼야 함.
         SimpleTimer &timer = com.getTimer();
         timer.deleteTimer(timer_id);
@@ -33,7 +33,7 @@ void check() {
 void setup() {
 	com.init();
     btn.setCallback(check);
-    com.print(0, "Off mode");
+    com.print(0, "Off mode", true);
 
 }
 

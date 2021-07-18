@@ -327,9 +327,7 @@ $ pip install matplotlib pillow
 ```
 
 ```
-$ pip install cython
-$ pip install "git+https://github.com/philferriere/cocoapi.git#egg=pycocotools&subdirectory=PythonAPI"
-$ pip install pycocotools
+$ pip install pycocotools-windows
 ```
 
 **c:\workspace\tf 에서 설치**
@@ -507,5 +505,27 @@ $ sudo bluetoothctl	// 명령어로 페어링
 // 페어링 되면 
 [bluetooth]# trust 주소
 [bluetooth]# exit
+```
+
+
+
+
+
+## mjpeg-streamer
+
+설치
+
+
+
+실행
+
+```
+$ mjpg_streamer -i "input_uvc.so -r 640x480 -n -f 15" \
+-o "output_http.so -p 8000" \
+-w "/usr/local/share/mjpg-streamer/www/" \
+-i input_raspicam.so
+
+$ mjpg_streamer -i "input_raspicam.so -vf" -o "output_http.so -p 
+8090 -w /usr/local/share/mjpg-streamer/www/"
 ```
 
